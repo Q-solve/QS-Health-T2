@@ -1,0 +1,855 @@
+{
+  "phase": 3,
+  "status": "in_progress",
+  "backend": "qbraid:qbraid:sim:qir-sv",
+  "shots": 1000,
+  "n_qaoa_runs": 6,
+  "records": [
+    {
+      "tier": "T0",
+      "county": "LAMU",
+      "seed": 0,
+      "constraint_setting": "nominal",
+      "feature_stage": "B4",
+      "who_capacity_mode": "feasible",
+      "num_facilities": 2,
+      "num_communities": 3,
+      "num_variables": 6,
+      "solver_id": "qaoa_qbraid",
+      "backend": "qbraid:qbraid:sim:qir-sv",
+      "shots": 1000,
+      "qbraid_job_id": "qbraid:qbraid:sim:qir-sv-9ca1-qjob-6a989e3ce026787d1e5acf05",
+      "qbraid_status": "COMPLETED",
+      "used_platform_counts": true,
+      "objective_value": 41938.361588,
+      "status": "feasible",
+      "failure_label": null,
+      "gini_equity_index": 0.079003,
+      "who_compliance_pct": 100.0,
+      "population_coverage_pct": 100.0,
+      "total_travel_km": 10.97,
+      "d_p90_km": 4.158,
+      "execution_time_sec": 23.700686,
+      "bitstring": "101010",
+      "extra_metrics": {
+        "backend_name": "qbraid:qbraid:sim:qir-sv",
+        "qubo_variables": 6,
+        "shots": 1000,
+        "qaoa_gamma": 0.4,
+        "qaoa_beta": 0.3,
+        "qaoa_reps": 1,
+        "used_platform_counts": true,
+        "used_aer_counts": false,
+        "n_unique_bitstrings": 64,
+        "top5_counts": [
+          [
+            "111111",
+            166
+          ],
+          [
+            "111011",
+            54
+          ],
+          [
+            "110111",
+            52
+          ],
+          [
+            "111101",
+            49
+          ],
+          [
+            "101111",
+            48
+          ]
+        ],
+        "queue_plus_exec_sec": 23.59,
+        "bitstring_repaired": "101010",
+        "qbraid_lab_profile": "vscode_8vCPU_25GB",
+        "demand_stage": "B4",
+        "who_ratio": 1000.0,
+        "equity_target": 0.25,
+        "num_variables": 6
+      },
+      "best_classical": {
+        "solver_id": "c1_brute_force",
+        "objective_value": 41938.361588,
+        "gini_equity_index": 0.079003,
+        "who_compliance_pct": 100.0,
+        "population_coverage_pct": 100.0,
+        "total_travel_km": 10.97,
+        "execution_time_sec": 0.011527,
+        "status": "optimal",
+        "who_capacity_mode": "feasible",
+        "source": "same_instance",
+        "all_runs": [
+          {
+            "solver_id": "c1_brute_force",
+            "objective_value": 41938.361588,
+            "gini_equity_index": 0.079003,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 10.97,
+            "execution_time_sec": 0.011527,
+            "status": "optimal",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c3_greedy",
+            "objective_value": 41938.361588,
+            "gini_equity_index": 0.079003,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 10.97,
+            "execution_time_sec": 0.000735,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c4_local_search",
+            "objective_value": 41938.361588,
+            "gini_equity_index": 0.079003,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 10.97,
+            "execution_time_sec": 0.010455,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c5_simulated_annealing",
+            "objective_value": 41938.361588,
+            "gini_equity_index": 0.079003,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 10.97,
+            "execution_time_sec": 1.247687,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c2_milp",
+            "objective_value": 41938.361588,
+            "gini_equity_index": 0.079003,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 10.97,
+            "execution_time_sec": 0.006254,
+            "status": "optimal",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          }
+        ]
+      },
+      "gap_to_best_classical": 0.0,
+      "beats_best_classical": false
+    },
+    {
+      "tier": "T0",
+      "county": "GARISSA",
+      "seed": 0,
+      "constraint_setting": "nominal",
+      "feature_stage": "B4",
+      "who_capacity_mode": "feasible",
+      "num_facilities": 2,
+      "num_communities": 3,
+      "num_variables": 6,
+      "solver_id": "qaoa_qbraid",
+      "backend": "qbraid:qbraid:sim:qir-sv",
+      "shots": 1000,
+      "qbraid_job_id": "qbraid:qbraid:sim:qir-sv-9ca1-qjob-6a989e56e026787d1e5acf11",
+      "qbraid_status": "COMPLETED",
+      "used_platform_counts": true,
+      "objective_value": 4152797.735337,
+      "status": "feasible",
+      "failure_label": null,
+      "gini_equity_index": 0.183021,
+      "who_compliance_pct": 100.0,
+      "population_coverage_pct": 100.0,
+      "total_travel_km": 536.95,
+      "d_p90_km": 230.052,
+      "execution_time_sec": 12.899532,
+      "bitstring": "101010",
+      "extra_metrics": {
+        "backend_name": "qbraid:qbraid:sim:qir-sv",
+        "qubo_variables": 6,
+        "shots": 1000,
+        "qaoa_gamma": 0.4,
+        "qaoa_beta": 0.3,
+        "qaoa_reps": 1,
+        "used_platform_counts": true,
+        "used_aer_counts": false,
+        "n_unique_bitstrings": 63,
+        "top5_counts": [
+          [
+            "111111",
+            183
+          ],
+          [
+            "011111",
+            53
+          ],
+          [
+            "110111",
+            44
+          ],
+          [
+            "111011",
+            44
+          ],
+          [
+            "111110",
+            41
+          ]
+        ],
+        "queue_plus_exec_sec": 12.7862,
+        "bitstring_repaired": "101010",
+        "qbraid_lab_profile": "vscode_8vCPU_25GB",
+        "demand_stage": "B4",
+        "who_ratio": 1000.0,
+        "equity_target": 0.25,
+        "num_variables": 6
+      },
+      "best_classical": {
+        "solver_id": "c1_brute_force",
+        "objective_value": 4152797.735337,
+        "gini_equity_index": 0.183021,
+        "who_compliance_pct": 100.0,
+        "population_coverage_pct": 100.0,
+        "total_travel_km": 536.95,
+        "execution_time_sec": 0.009599,
+        "status": "optimal",
+        "who_capacity_mode": "feasible",
+        "source": "same_instance",
+        "all_runs": [
+          {
+            "solver_id": "c1_brute_force",
+            "objective_value": 4152797.735337,
+            "gini_equity_index": 0.183021,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 536.95,
+            "execution_time_sec": 0.009599,
+            "status": "optimal",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c3_greedy",
+            "objective_value": 4183241.634629,
+            "gini_equity_index": 0.178001,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 540.52,
+            "execution_time_sec": 0.000799,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c4_local_search",
+            "objective_value": 4152797.735337,
+            "gini_equity_index": 0.183021,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 536.95,
+            "execution_time_sec": 0.015863,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c5_simulated_annealing",
+            "objective_value": 4183241.634629,
+            "gini_equity_index": 0.178001,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 540.52,
+            "execution_time_sec": 1.208164,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c2_milp",
+            "objective_value": 4152797.735337,
+            "gini_equity_index": 0.183021,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 536.95,
+            "execution_time_sec": 0.008439,
+            "status": "optimal",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          }
+        ]
+      },
+      "gap_to_best_classical": 0.0,
+      "beats_best_classical": false
+    },
+    {
+      "tier": "T0",
+      "county": "KILIFI",
+      "seed": 0,
+      "constraint_setting": "nominal",
+      "feature_stage": "B4",
+      "who_capacity_mode": "feasible",
+      "num_facilities": 2,
+      "num_communities": 3,
+      "num_variables": 6,
+      "solver_id": "qaoa_qbraid",
+      "backend": "qbraid:qbraid:sim:qir-sv",
+      "shots": 1000,
+      "qbraid_job_id": "qbraid:qbraid:sim:qir-sv-9ca1-qjob-6a989e65e026787d1e5acf16",
+      "qbraid_status": "COMPLETED",
+      "used_platform_counts": true,
+      "objective_value": 2316479.882636,
+      "status": "feasible",
+      "failure_label": null,
+      "gini_equity_index": 0.433644,
+      "who_compliance_pct": 100.0,
+      "population_coverage_pct": 100.0,
+      "total_travel_km": 140.53,
+      "d_p90_km": 86.6,
+      "execution_time_sec": 12.327825,
+      "bitstring": "101010",
+      "extra_metrics": {
+        "backend_name": "qbraid:qbraid:sim:qir-sv",
+        "qubo_variables": 6,
+        "shots": 1000,
+        "qaoa_gamma": 0.4,
+        "qaoa_beta": 0.3,
+        "qaoa_reps": 1,
+        "used_platform_counts": true,
+        "used_aer_counts": false,
+        "n_unique_bitstrings": 64,
+        "top5_counts": [
+          [
+            "111111",
+            201
+          ],
+          [
+            "111011",
+            53
+          ],
+          [
+            "110111",
+            50
+          ],
+          [
+            "111101",
+            49
+          ],
+          [
+            "011111",
+            45
+          ]
+        ],
+        "queue_plus_exec_sec": 12.22,
+        "bitstring_repaired": "101010",
+        "qbraid_lab_profile": "vscode_8vCPU_25GB",
+        "demand_stage": "B4",
+        "who_ratio": 1000.0,
+        "equity_target": 0.25,
+        "num_variables": 6
+      },
+      "best_classical": {
+        "solver_id": "c1_brute_force",
+        "objective_value": 2316479.882636,
+        "gini_equity_index": 0.433644,
+        "who_compliance_pct": 100.0,
+        "population_coverage_pct": 100.0,
+        "total_travel_km": 140.53,
+        "execution_time_sec": 0.013049,
+        "status": "optimal",
+        "who_capacity_mode": "feasible",
+        "source": "same_instance",
+        "all_runs": [
+          {
+            "solver_id": "c1_brute_force",
+            "objective_value": 2316479.882636,
+            "gini_equity_index": 0.433644,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 140.53,
+            "execution_time_sec": 0.013049,
+            "status": "optimal",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c3_greedy",
+            "objective_value": 4946737.74238,
+            "gini_equity_index": 0.418611,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 312.86,
+            "execution_time_sec": 0.000605,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c4_local_search",
+            "objective_value": 2316479.882636,
+            "gini_equity_index": 0.433644,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 140.53,
+            "execution_time_sec": 0.018981,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c5_simulated_annealing",
+            "objective_value": 3588711.705795,
+            "gini_equity_index": 0.320812,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 308.28,
+            "execution_time_sec": 1.315389,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c2_milp",
+            "objective_value": 2316479.882636,
+            "gini_equity_index": 0.433644,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 140.53,
+            "execution_time_sec": 0.00838,
+            "status": "optimal",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          }
+        ]
+      },
+      "gap_to_best_classical": 0.0,
+      "beats_best_classical": false
+    },
+    {
+      "tier": "T1",
+      "county": "LAMU",
+      "seed": 0,
+      "constraint_setting": "nominal",
+      "feature_stage": "B4",
+      "who_capacity_mode": "feasible",
+      "num_facilities": 3,
+      "num_communities": 4,
+      "num_variables": 12,
+      "solver_id": "qaoa_qbraid",
+      "backend": "qbraid:qbraid:sim:qir-sv",
+      "shots": 1000,
+      "qbraid_job_id": "qbraid:qbraid:sim:qir-sv-9ca1-qjob-6a989e74e026787d1e5acf1b",
+      "qbraid_status": "COMPLETED",
+      "used_platform_counts": true,
+      "objective_value": 26575.714648,
+      "status": "feasible",
+      "failure_label": null,
+      "gini_equity_index": 0.187834,
+      "who_compliance_pct": 100.0,
+      "population_coverage_pct": 100.0,
+      "total_travel_km": 7.48,
+      "d_p90_km": 2.645,
+      "execution_time_sec": 13.531107,
+      "bitstring": "000110100100",
+      "extra_metrics": {
+        "backend_name": "qbraid:qbraid:sim:qir-sv",
+        "qubo_variables": 12,
+        "shots": 1000,
+        "qaoa_gamma": 0.4,
+        "qaoa_beta": 0.3,
+        "qaoa_reps": 1,
+        "used_platform_counts": true,
+        "used_aer_counts": false,
+        "n_unique_bitstrings": 635,
+        "top5_counts": [
+          [
+            "111111111111",
+            38
+          ],
+          [
+            "101111111111",
+            11
+          ],
+          [
+            "111011111111",
+            10
+          ],
+          [
+            "111111110111",
+            10
+          ],
+          [
+            "111101001111",
+            9
+          ]
+        ],
+        "queue_plus_exec_sec": 13.3433,
+        "bitstring_repaired": "000110100100",
+        "qbraid_lab_profile": "vscode_8vCPU_25GB",
+        "demand_stage": "B4",
+        "who_ratio": 1000.0,
+        "equity_target": 0.25,
+        "num_variables": 12
+      },
+      "best_classical": {
+        "solver_id": "c1_brute_force",
+        "objective_value": 26575.714648,
+        "gini_equity_index": 0.187834,
+        "who_compliance_pct": 100.0,
+        "population_coverage_pct": 100.0,
+        "total_travel_km": 7.48,
+        "execution_time_sec": 0.10851,
+        "status": "optimal",
+        "who_capacity_mode": "feasible",
+        "source": "same_instance",
+        "all_runs": [
+          {
+            "solver_id": "c1_brute_force",
+            "objective_value": 26575.714648,
+            "gini_equity_index": 0.187834,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 7.48,
+            "execution_time_sec": 0.10851,
+            "status": "optimal",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c3_greedy",
+            "objective_value": 26575.714648,
+            "gini_equity_index": 0.187834,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 7.48,
+            "execution_time_sec": 0.001103,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c4_local_search",
+            "objective_value": 26575.714648,
+            "gini_equity_index": 0.187834,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 7.48,
+            "execution_time_sec": 0.025811,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c5_simulated_annealing",
+            "objective_value": 26575.714648,
+            "gini_equity_index": 0.187834,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 7.48,
+            "execution_time_sec": 1.484022,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c2_milp",
+            "objective_value": 26575.714648,
+            "gini_equity_index": 0.187834,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 7.48,
+            "execution_time_sec": 0.127819,
+            "status": "optimal",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          }
+        ]
+      },
+      "gap_to_best_classical": 0.0,
+      "beats_best_classical": false
+    },
+    {
+      "tier": "T2",
+      "county": "LAMU",
+      "seed": 0,
+      "constraint_setting": "nominal",
+      "feature_stage": "B4",
+      "who_capacity_mode": "feasible",
+      "num_facilities": 4,
+      "num_communities": 5,
+      "num_variables": 20,
+      "solver_id": "qaoa_qbraid",
+      "backend": "qbraid:qbraid:sim:qir-sv",
+      "shots": 1000,
+      "qbraid_job_id": "qbraid:qbraid:sim:qir-sv-9ca1-qjob-6a989e85e026787d1e5acf22",
+      "qbraid_status": "AER_LOCAL_ON_LAB",
+      "used_platform_counts": false,
+      "objective_value": 22842724.528661,
+      "status": "feasible",
+      "failure_label": null,
+      "gini_equity_index": 0.736153,
+      "who_compliance_pct": 50.0,
+      "population_coverage_pct": 100.0,
+      "total_travel_km": 185.38,
+      "d_p90_km": 104.774,
+      "execution_time_sec": 186.117817,
+      "bitstring": "00101010101000000000",
+      "extra_metrics": {
+        "backend_name": "qbraid:qbraid:sim:qir-sv",
+        "qubo_variables": 20,
+        "shots": 1000,
+        "qaoa_gamma": 0.4,
+        "qaoa_beta": 0.3,
+        "qaoa_reps": 1,
+        "used_platform_counts": false,
+        "used_aer_counts": true,
+        "n_unique_bitstrings": 972,
+        "top5_counts": [
+          [
+            "11111111101111111111",
+            4
+          ],
+          [
+            "11111111111011111111",
+            4
+          ],
+          [
+            "11111111010111111111",
+            3
+          ],
+          [
+            "11110111111111111111",
+            3
+          ],
+          [
+            "11111111111101011111",
+            2
+          ]
+        ],
+        "queue_plus_exec_sec": 186.0108,
+        "bitstring_repaired": "00101010101000000000",
+        "qbraid_lab_profile": "vscode_8vCPU_25GB",
+        "demand_stage": "B4",
+        "who_ratio": 1000.0,
+        "equity_target": 0.25,
+        "num_variables": 20
+      },
+      "best_classical": {
+        "solver_id": "c3_greedy",
+        "objective_value": 2412324.528661,
+        "gini_equity_index": 0.736153,
+        "who_compliance_pct": 100.0,
+        "population_coverage_pct": 100.0,
+        "total_travel_km": 185.38,
+        "execution_time_sec": 0.001671,
+        "status": "feasible",
+        "who_capacity_mode": "feasible",
+        "source": "same_instance",
+        "all_runs": [
+          {
+            "solver_id": "c3_greedy",
+            "objective_value": 2412324.528661,
+            "gini_equity_index": 0.736153,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 185.38,
+            "execution_time_sec": 0.001671,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c4_local_search",
+            "objective_value": 2412324.528661,
+            "gini_equity_index": 0.736153,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 185.38,
+            "execution_time_sec": 0.027399,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c5_simulated_annealing",
+            "objective_value": 2412324.528661,
+            "gini_equity_index": 0.736153,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 185.38,
+            "execution_time_sec": 1.376105,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c2_milp",
+            "objective_value": 2412324.528661,
+            "gini_equity_index": 0.736153,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 185.38,
+            "execution_time_sec": 0.474932,
+            "status": "optimal",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          }
+        ]
+      },
+      "gap_to_best_classical": 8.469175584489134,
+      "beats_best_classical": false
+    },
+    {
+      "tier": "T1",
+      "county": "GARISSA",
+      "seed": 0,
+      "constraint_setting": "nominal",
+      "feature_stage": "B4",
+      "who_capacity_mode": "feasible",
+      "num_facilities": 3,
+      "num_communities": 4,
+      "num_variables": 12,
+      "solver_id": "qaoa_qbraid",
+      "backend": "qbraid:qbraid:sim:qir-sv",
+      "shots": 1000,
+      "qbraid_job_id": "qbraid:qbraid:sim:qir-sv-9ca1-qjob-6a989f40e026787d1e5acf4c",
+      "qbraid_status": "COMPLETED",
+      "used_platform_counts": true,
+      "objective_value": 660151411.872544,
+      "status": "feasible",
+      "failure_label": null,
+      "gini_equity_index": 0.659812,
+      "who_compliance_pct": 33.3333,
+      "population_coverage_pct": 100.0,
+      "total_travel_km": 121.58,
+      "d_p90_km": 78.117,
+      "execution_time_sec": 12.464893,
+      "bitstring": "010100001010",
+      "extra_metrics": {
+        "backend_name": "qbraid:qbraid:sim:qir-sv",
+        "qubo_variables": 12,
+        "shots": 1000,
+        "qaoa_gamma": 0.4,
+        "qaoa_beta": 0.3,
+        "qaoa_reps": 1,
+        "used_platform_counts": true,
+        "used_aer_counts": false,
+        "n_unique_bitstrings": 660,
+        "top5_counts": [
+          [
+            "111111111111",
+            23
+          ],
+          [
+            "111100001111",
+            12
+          ],
+          [
+            "111111110000",
+            11
+          ],
+          [
+            "111111111101",
+            10
+          ],
+          [
+            "111011111111",
+            9
+          ]
+        ],
+        "queue_plus_exec_sec": 12.3409,
+        "bitstring_repaired": "010100001010",
+        "qbraid_lab_profile": "vscode_8vCPU_25GB",
+        "demand_stage": "B4",
+        "who_ratio": 1000.0,
+        "equity_target": 0.25,
+        "num_variables": 12
+      },
+      "best_classical": {
+        "solver_id": "c1_brute_force",
+        "objective_value": 4086369.420609,
+        "gini_equity_index": 0.691329,
+        "who_compliance_pct": 100.0,
+        "population_coverage_pct": 100.0,
+        "total_travel_km": 186.89,
+        "execution_time_sec": 0.051165,
+        "status": "optimal",
+        "who_capacity_mode": "feasible",
+        "source": "same_instance",
+        "all_runs": [
+          {
+            "solver_id": "c1_brute_force",
+            "objective_value": 4086369.420609,
+            "gini_equity_index": 0.691329,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 186.89,
+            "execution_time_sec": 0.051165,
+            "status": "optimal",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c3_greedy",
+            "objective_value": 5551004.195408,
+            "gini_equity_index": 0.549901,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 331.71,
+            "execution_time_sec": 0.000966,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c4_local_search",
+            "objective_value": 5234055.325676,
+            "gini_equity_index": 0.355131,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 563.2,
+            "execution_time_sec": 0.012521,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c5_simulated_annealing",
+            "objective_value": 5234055.325676,
+            "gini_equity_index": 0.355131,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 563.2,
+            "execution_time_sec": 0.861254,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c2_milp",
+            "objective_value": 4086369.420609,
+            "gini_equity_index": 0.691329,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 186.89,
+            "execution_time_sec": 0.083115,
+            "status": "optimal",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          }
+        ]
+      },
+      "gap_to_best_classical": 160.54961627873584,
+      "beats_best_classical": false
+    }
+  ]
+}

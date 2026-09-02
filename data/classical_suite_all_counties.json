@@ -1,0 +1,2474 @@
+{
+  "execution_target": "local_cpu",
+  "qbraid_lab_instance": "small_vscode",
+  "qbraid_lab_vcpus": 2,
+  "qbraid_lab_ram_gb": 4,
+  "time_budget_sec_per_scenario": 2.0,
+  "scenarios_requested": [
+    "turkana_pastoral_demo",
+    "garissa_arid_demo",
+    "mandera_border_demo",
+    "kilifi_coastal_demo",
+    "wajir_pastoral_demo",
+    "taita_taveta_demo",
+    "marsabit_desert_demo",
+    "isiolo_pastoral_demo",
+    "samburu_pastoral_demo",
+    "lamu_coastal_demo",
+    "west_pokot_demo",
+    "tana_river_demo",
+    "narok_pastoral_demo",
+    "kwale_coastal_demo"
+  ],
+  "scenarios_completed": [
+    "turkana_pastoral_demo",
+    "garissa_arid_demo",
+    "mandera_border_demo",
+    "kilifi_coastal_demo",
+    "wajir_pastoral_demo",
+    "taita_taveta_demo",
+    "marsabit_desert_demo",
+    "isiolo_pastoral_demo",
+    "samburu_pastoral_demo",
+    "lamu_coastal_demo",
+    "west_pokot_demo",
+    "tana_river_demo",
+    "narok_pastoral_demo",
+    "kwale_coastal_demo"
+  ],
+  "counties_covered": [
+    "Garissa",
+    "Isiolo",
+    "Kilifi",
+    "Kwale",
+    "Lamu",
+    "Mandera",
+    "Marsabit",
+    "Narok",
+    "Samburu",
+    "Taita Taveta",
+    "Tana River",
+    "Turkana",
+    "Wajir",
+    "West Pokot"
+  ],
+  "county_count": 14,
+  "methods": [
+    "c1_brute_force",
+    "c2_milp",
+    "c3_greedy",
+    "c4_local_search",
+    "c5_simulated_annealing",
+    "c6_genetic_algorithm",
+    "c7_tabu_search"
+  ],
+  "wins_by_solver": {
+    "c1_brute_force": 14,
+    "c2_milp": 0,
+    "c3_greedy": 0,
+    "c4_local_search": 0,
+    "c5_simulated_annealing": 0,
+    "c6_genetic_algorithm": 0,
+    "c7_tabu_search": 0
+  },
+  "scenarios_with_bottleneck_status": 0,
+  "per_scenario": {
+    "turkana_pastoral_demo": {
+      "county": "Turkana",
+      "best_classical": "c1_brute_force",
+      "ranking_by_objective": [
+        {
+          "solver_id": "c1_brute_force",
+          "objective_value": 921266.562284,
+          "status": "optimal",
+          "gini_equity_index": 0.274932,
+          "theil_index": 0.152851,
+          "d_p90_km": 168.232,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.004709
+        },
+        {
+          "solver_id": "c2_milp",
+          "objective_value": 921266.562284,
+          "status": "feasible",
+          "gini_equity_index": 0.274932,
+          "theil_index": 0.152851,
+          "d_p90_km": 168.232,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.00387
+        },
+        {
+          "solver_id": "c6_genetic_algorithm",
+          "objective_value": 921266.562284,
+          "status": "feasible",
+          "gini_equity_index": 0.274932,
+          "theil_index": 0.152851,
+          "d_p90_km": 168.232,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 2.027278
+        },
+        {
+          "solver_id": "c3_greedy",
+          "objective_value": 987634.407711,
+          "status": "feasible",
+          "gini_equity_index": 0.375759,
+          "theil_index": 0.344298,
+          "d_p90_km": 279.364,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.000251
+        },
+        {
+          "solver_id": "c4_local_search",
+          "objective_value": 987634.407711,
+          "status": "feasible",
+          "gini_equity_index": 0.375759,
+          "theil_index": 0.344298,
+          "d_p90_km": 279.364,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.006585
+        },
+        {
+          "solver_id": "c7_tabu_search",
+          "objective_value": 987634.407711,
+          "status": "feasible",
+          "gini_equity_index": 0.375759,
+          "theil_index": 0.344298,
+          "d_p90_km": 279.364,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.015737
+        },
+        {
+          "solver_id": "c5_simulated_annealing",
+          "objective_value": 987634.407711,
+          "status": "feasible",
+          "gini_equity_index": 0.375759,
+          "theil_index": 0.344298,
+          "d_p90_km": 279.364,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.295174
+        }
+      ],
+      "results_summary": {
+        "c1_brute_force": {
+          "objective_value": 921266.562284,
+          "status": "optimal",
+          "gini_equity_index": 0.274932,
+          "theil_index": 0.152851,
+          "d_p90_km": 168.232,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 343.6,
+          "execution_time_sec": 0.004709
+        },
+        "c2_milp": {
+          "objective_value": 921266.562284,
+          "status": "feasible",
+          "gini_equity_index": 0.274932,
+          "theil_index": 0.152851,
+          "d_p90_km": 168.232,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 343.6,
+          "execution_time_sec": 0.00387
+        },
+        "c3_greedy": {
+          "objective_value": 987634.407711,
+          "status": "feasible",
+          "gini_equity_index": 0.375759,
+          "theil_index": 0.344298,
+          "d_p90_km": 279.364,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 512.19,
+          "execution_time_sec": 0.000251
+        },
+        "c4_local_search": {
+          "objective_value": 987634.407711,
+          "status": "feasible",
+          "gini_equity_index": 0.375759,
+          "theil_index": 0.344298,
+          "d_p90_km": 279.364,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 512.19,
+          "execution_time_sec": 0.006585
+        },
+        "c5_simulated_annealing": {
+          "objective_value": 987634.407711,
+          "status": "feasible",
+          "gini_equity_index": 0.375759,
+          "theil_index": 0.344298,
+          "d_p90_km": 279.364,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 512.19,
+          "execution_time_sec": 0.295174
+        },
+        "c6_genetic_algorithm": {
+          "objective_value": 921266.562284,
+          "status": "feasible",
+          "gini_equity_index": 0.274932,
+          "theil_index": 0.152851,
+          "d_p90_km": 168.232,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 343.6,
+          "execution_time_sec": 2.027278
+        },
+        "c7_tabu_search": {
+          "objective_value": 987634.407711,
+          "status": "feasible",
+          "gini_equity_index": 0.375759,
+          "theil_index": 0.344298,
+          "d_p90_km": 279.364,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 512.19,
+          "execution_time_sec": 0.015737
+        }
+      }
+    },
+    "garissa_arid_demo": {
+      "county": "Garissa",
+      "best_classical": "c1_brute_force",
+      "ranking_by_objective": [
+        {
+          "solver_id": "c1_brute_force",
+          "objective_value": 981742.12237,
+          "status": "optimal",
+          "gini_equity_index": 0.303755,
+          "theil_index": 0.282753,
+          "d_p90_km": 146.878,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.004685
+        },
+        {
+          "solver_id": "c3_greedy",
+          "objective_value": 981742.12237,
+          "status": "feasible",
+          "gini_equity_index": 0.303755,
+          "theil_index": 0.282753,
+          "d_p90_km": 146.878,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.000448
+        },
+        {
+          "solver_id": "c4_local_search",
+          "objective_value": 981742.12237,
+          "status": "feasible",
+          "gini_equity_index": 0.303755,
+          "theil_index": 0.282753,
+          "d_p90_km": 146.878,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.0036
+        },
+        {
+          "solver_id": "c2_milp",
+          "objective_value": 981742.12237,
+          "status": "feasible",
+          "gini_equity_index": 0.303755,
+          "theil_index": 0.282753,
+          "d_p90_km": 146.878,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.004019
+        },
+        {
+          "solver_id": "c7_tabu_search",
+          "objective_value": 981742.12237,
+          "status": "feasible",
+          "gini_equity_index": 0.303755,
+          "theil_index": 0.282753,
+          "d_p90_km": 146.878,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.016326
+        },
+        {
+          "solver_id": "c5_simulated_annealing",
+          "objective_value": 981742.12237,
+          "status": "feasible",
+          "gini_equity_index": 0.303755,
+          "theil_index": 0.282753,
+          "d_p90_km": 146.878,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.276047
+        },
+        {
+          "solver_id": "c6_genetic_algorithm",
+          "objective_value": 981742.12237,
+          "status": "feasible",
+          "gini_equity_index": 0.303755,
+          "theil_index": 0.282753,
+          "d_p90_km": 146.878,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 2.039539
+        }
+      ],
+      "results_summary": {
+        "c1_brute_force": {
+          "objective_value": 981742.12237,
+          "status": "optimal",
+          "gini_equity_index": 0.303755,
+          "theil_index": 0.282753,
+          "d_p90_km": 146.878,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 301.8,
+          "execution_time_sec": 0.004685
+        },
+        "c2_milp": {
+          "objective_value": 981742.12237,
+          "status": "feasible",
+          "gini_equity_index": 0.303755,
+          "theil_index": 0.282753,
+          "d_p90_km": 146.878,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 301.8,
+          "execution_time_sec": 0.004019
+        },
+        "c3_greedy": {
+          "objective_value": 981742.12237,
+          "status": "feasible",
+          "gini_equity_index": 0.303755,
+          "theil_index": 0.282753,
+          "d_p90_km": 146.878,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 301.8,
+          "execution_time_sec": 0.000448
+        },
+        "c4_local_search": {
+          "objective_value": 981742.12237,
+          "status": "feasible",
+          "gini_equity_index": 0.303755,
+          "theil_index": 0.282753,
+          "d_p90_km": 146.878,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 301.8,
+          "execution_time_sec": 0.0036
+        },
+        "c5_simulated_annealing": {
+          "objective_value": 981742.12237,
+          "status": "feasible",
+          "gini_equity_index": 0.303755,
+          "theil_index": 0.282753,
+          "d_p90_km": 146.878,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 301.8,
+          "execution_time_sec": 0.276047
+        },
+        "c6_genetic_algorithm": {
+          "objective_value": 981742.12237,
+          "status": "feasible",
+          "gini_equity_index": 0.303755,
+          "theil_index": 0.282753,
+          "d_p90_km": 146.878,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 301.8,
+          "execution_time_sec": 2.039539
+        },
+        "c7_tabu_search": {
+          "objective_value": 981742.12237,
+          "status": "feasible",
+          "gini_equity_index": 0.303755,
+          "theil_index": 0.282753,
+          "d_p90_km": 146.878,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 301.8,
+          "execution_time_sec": 0.016326
+        }
+      }
+    },
+    "mandera_border_demo": {
+      "county": "Mandera",
+      "best_classical": "c1_brute_force",
+      "ranking_by_objective": [
+        {
+          "solver_id": "c1_brute_force",
+          "objective_value": 6181821.580106,
+          "status": "optimal",
+          "gini_equity_index": 0.402009,
+          "theil_index": 0.372305,
+          "d_p90_km": 177.008,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.004052
+        },
+        {
+          "solver_id": "c2_milp",
+          "objective_value": 6181821.580106,
+          "status": "feasible",
+          "gini_equity_index": 0.402009,
+          "theil_index": 0.372305,
+          "d_p90_km": 177.008,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.004187
+        },
+        {
+          "solver_id": "c4_local_search",
+          "objective_value": 6181821.580106,
+          "status": "feasible",
+          "gini_equity_index": 0.402009,
+          "theil_index": 0.372305,
+          "d_p90_km": 177.008,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.007638
+        },
+        {
+          "solver_id": "c7_tabu_search",
+          "objective_value": 6181821.580106,
+          "status": "feasible",
+          "gini_equity_index": 0.402009,
+          "theil_index": 0.372305,
+          "d_p90_km": 177.008,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.026831
+        },
+        {
+          "solver_id": "c5_simulated_annealing",
+          "objective_value": 6181821.580106,
+          "status": "feasible",
+          "gini_equity_index": 0.402009,
+          "theil_index": 0.372305,
+          "d_p90_km": 177.008,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.281648
+        },
+        {
+          "solver_id": "c6_genetic_algorithm",
+          "objective_value": 6181821.580106,
+          "status": "feasible",
+          "gini_equity_index": 0.402009,
+          "theil_index": 0.372305,
+          "d_p90_km": 177.008,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 2.031585
+        },
+        {
+          "solver_id": "c3_greedy",
+          "objective_value": 25220234.088383,
+          "status": "feasible",
+          "gini_equity_index": 0.356384,
+          "theil_index": 0.325611,
+          "d_p90_km": 109.392,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.000237
+        }
+      ],
+      "results_summary": {
+        "c1_brute_force": {
+          "objective_value": 6181821.580106,
+          "status": "optimal",
+          "gini_equity_index": 0.402009,
+          "theil_index": 0.372305,
+          "d_p90_km": 177.008,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 311.9,
+          "execution_time_sec": 0.004052
+        },
+        "c2_milp": {
+          "objective_value": 6181821.580106,
+          "status": "feasible",
+          "gini_equity_index": 0.402009,
+          "theil_index": 0.372305,
+          "d_p90_km": 177.008,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 311.9,
+          "execution_time_sec": 0.004187
+        },
+        "c3_greedy": {
+          "objective_value": 25220234.088383,
+          "status": "feasible",
+          "gini_equity_index": 0.356384,
+          "theil_index": 0.325611,
+          "d_p90_km": 109.392,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 206.65,
+          "execution_time_sec": 0.000237
+        },
+        "c4_local_search": {
+          "objective_value": 6181821.580106,
+          "status": "feasible",
+          "gini_equity_index": 0.402009,
+          "theil_index": 0.372305,
+          "d_p90_km": 177.008,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 311.9,
+          "execution_time_sec": 0.007638
+        },
+        "c5_simulated_annealing": {
+          "objective_value": 6181821.580106,
+          "status": "feasible",
+          "gini_equity_index": 0.402009,
+          "theil_index": 0.372305,
+          "d_p90_km": 177.008,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 311.9,
+          "execution_time_sec": 0.281648
+        },
+        "c6_genetic_algorithm": {
+          "objective_value": 6181821.580106,
+          "status": "feasible",
+          "gini_equity_index": 0.402009,
+          "theil_index": 0.372305,
+          "d_p90_km": 177.008,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 311.9,
+          "execution_time_sec": 2.031585
+        },
+        "c7_tabu_search": {
+          "objective_value": 6181821.580106,
+          "status": "feasible",
+          "gini_equity_index": 0.402009,
+          "theil_index": 0.372305,
+          "d_p90_km": 177.008,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 311.9,
+          "execution_time_sec": 0.026831
+        }
+      }
+    },
+    "kilifi_coastal_demo": {
+      "county": "Kilifi",
+      "best_classical": "c1_brute_force",
+      "ranking_by_objective": [
+        {
+          "solver_id": "c1_brute_force",
+          "objective_value": 405123.406281,
+          "status": "optimal",
+          "gini_equity_index": 0.125239,
+          "theil_index": 0.026699,
+          "d_p90_km": 102.62,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.016757
+        },
+        {
+          "solver_id": "c2_milp",
+          "objective_value": 405123.406281,
+          "status": "feasible",
+          "gini_equity_index": 0.125239,
+          "theil_index": 0.026699,
+          "d_p90_km": 102.62,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.00744
+        },
+        {
+          "solver_id": "c4_local_search",
+          "objective_value": 405123.406281,
+          "status": "feasible",
+          "gini_equity_index": 0.125239,
+          "theil_index": 0.026699,
+          "d_p90_km": 102.62,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.017863
+        },
+        {
+          "solver_id": "c7_tabu_search",
+          "objective_value": 405123.406281,
+          "status": "feasible",
+          "gini_equity_index": 0.125239,
+          "theil_index": 0.026699,
+          "d_p90_km": 102.62,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.021663
+        },
+        {
+          "solver_id": "c6_genetic_algorithm",
+          "objective_value": 405123.406281,
+          "status": "feasible",
+          "gini_equity_index": 0.125239,
+          "theil_index": 0.026699,
+          "d_p90_km": 102.62,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 2.057203
+        },
+        {
+          "solver_id": "c3_greedy",
+          "objective_value": 421254.285405,
+          "status": "feasible",
+          "gini_equity_index": 0.201765,
+          "theil_index": 0.072638,
+          "d_p90_km": 97.762,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.000707
+        },
+        {
+          "solver_id": "c5_simulated_annealing",
+          "objective_value": 421254.285405,
+          "status": "feasible",
+          "gini_equity_index": 0.201765,
+          "theil_index": 0.072638,
+          "d_p90_km": 97.762,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.572851
+        }
+      ],
+      "results_summary": {
+        "c1_brute_force": {
+          "objective_value": 405123.406281,
+          "status": "optimal",
+          "gini_equity_index": 0.125239,
+          "theil_index": 0.026699,
+          "d_p90_km": 102.62,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 250.72,
+          "execution_time_sec": 0.016757
+        },
+        "c2_milp": {
+          "objective_value": 405123.406281,
+          "status": "feasible",
+          "gini_equity_index": 0.125239,
+          "theil_index": 0.026699,
+          "d_p90_km": 102.62,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 250.72,
+          "execution_time_sec": 0.00744
+        },
+        "c3_greedy": {
+          "objective_value": 421254.285405,
+          "status": "feasible",
+          "gini_equity_index": 0.201765,
+          "theil_index": 0.072638,
+          "d_p90_km": 97.762,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 209.98,
+          "execution_time_sec": 0.000707
+        },
+        "c4_local_search": {
+          "objective_value": 405123.406281,
+          "status": "feasible",
+          "gini_equity_index": 0.125239,
+          "theil_index": 0.026699,
+          "d_p90_km": 102.62,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 250.72,
+          "execution_time_sec": 0.017863
+        },
+        "c5_simulated_annealing": {
+          "objective_value": 421254.285405,
+          "status": "feasible",
+          "gini_equity_index": 0.201765,
+          "theil_index": 0.072638,
+          "d_p90_km": 97.762,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 209.98,
+          "execution_time_sec": 0.572851
+        },
+        "c6_genetic_algorithm": {
+          "objective_value": 405123.406281,
+          "status": "feasible",
+          "gini_equity_index": 0.125239,
+          "theil_index": 0.026699,
+          "d_p90_km": 102.62,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 250.72,
+          "execution_time_sec": 2.057203
+        },
+        "c7_tabu_search": {
+          "objective_value": 405123.406281,
+          "status": "feasible",
+          "gini_equity_index": 0.125239,
+          "theil_index": 0.026699,
+          "d_p90_km": 102.62,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 250.72,
+          "execution_time_sec": 0.021663
+        }
+      }
+    },
+    "wajir_pastoral_demo": {
+      "county": "Wajir",
+      "best_classical": "c1_brute_force",
+      "ranking_by_objective": [
+        {
+          "solver_id": "c1_brute_force",
+          "objective_value": 768199.541388,
+          "status": "optimal",
+          "gini_equity_index": 0.475115,
+          "theil_index": 0.469499,
+          "d_p90_km": 154.774,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.007805
+        },
+        {
+          "solver_id": "c3_greedy",
+          "objective_value": 768199.541388,
+          "status": "feasible",
+          "gini_equity_index": 0.475115,
+          "theil_index": 0.469499,
+          "d_p90_km": 154.774,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.000326
+        },
+        {
+          "solver_id": "c4_local_search",
+          "objective_value": 768199.541388,
+          "status": "feasible",
+          "gini_equity_index": 0.475115,
+          "theil_index": 0.469499,
+          "d_p90_km": 154.774,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.006108
+        },
+        {
+          "solver_id": "c2_milp",
+          "objective_value": 768199.541388,
+          "status": "feasible",
+          "gini_equity_index": 0.475115,
+          "theil_index": 0.469499,
+          "d_p90_km": 154.774,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.008496
+        },
+        {
+          "solver_id": "c7_tabu_search",
+          "objective_value": 768199.541388,
+          "status": "feasible",
+          "gini_equity_index": 0.475115,
+          "theil_index": 0.469499,
+          "d_p90_km": 154.774,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.014715
+        },
+        {
+          "solver_id": "c5_simulated_annealing",
+          "objective_value": 768199.541388,
+          "status": "feasible",
+          "gini_equity_index": 0.475115,
+          "theil_index": 0.469499,
+          "d_p90_km": 154.774,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.334895
+        },
+        {
+          "solver_id": "c6_genetic_algorithm",
+          "objective_value": 768199.541388,
+          "status": "feasible",
+          "gini_equity_index": 0.475115,
+          "theil_index": 0.469499,
+          "d_p90_km": 154.774,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 2.034885
+        }
+      ],
+      "results_summary": {
+        "c1_brute_force": {
+          "objective_value": 768199.541388,
+          "status": "optimal",
+          "gini_equity_index": 0.475115,
+          "theil_index": 0.469499,
+          "d_p90_km": 154.774,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 245.33,
+          "execution_time_sec": 0.007805
+        },
+        "c2_milp": {
+          "objective_value": 768199.541388,
+          "status": "feasible",
+          "gini_equity_index": 0.475115,
+          "theil_index": 0.469499,
+          "d_p90_km": 154.774,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 245.33,
+          "execution_time_sec": 0.008496
+        },
+        "c3_greedy": {
+          "objective_value": 768199.541388,
+          "status": "feasible",
+          "gini_equity_index": 0.475115,
+          "theil_index": 0.469499,
+          "d_p90_km": 154.774,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 245.33,
+          "execution_time_sec": 0.000326
+        },
+        "c4_local_search": {
+          "objective_value": 768199.541388,
+          "status": "feasible",
+          "gini_equity_index": 0.475115,
+          "theil_index": 0.469499,
+          "d_p90_km": 154.774,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 245.33,
+          "execution_time_sec": 0.006108
+        },
+        "c5_simulated_annealing": {
+          "objective_value": 768199.541388,
+          "status": "feasible",
+          "gini_equity_index": 0.475115,
+          "theil_index": 0.469499,
+          "d_p90_km": 154.774,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 245.33,
+          "execution_time_sec": 0.334895
+        },
+        "c6_genetic_algorithm": {
+          "objective_value": 768199.541388,
+          "status": "feasible",
+          "gini_equity_index": 0.475115,
+          "theil_index": 0.469499,
+          "d_p90_km": 154.774,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 245.33,
+          "execution_time_sec": 2.034885
+        },
+        "c7_tabu_search": {
+          "objective_value": 768199.541388,
+          "status": "feasible",
+          "gini_equity_index": 0.475115,
+          "theil_index": 0.469499,
+          "d_p90_km": 154.774,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 245.33,
+          "execution_time_sec": 0.014715
+        }
+      }
+    },
+    "taita_taveta_demo": {
+      "county": "Taita Taveta",
+      "best_classical": "c1_brute_force",
+      "ranking_by_objective": [
+        {
+          "solver_id": "c1_brute_force",
+          "objective_value": 5937974.737113,
+          "status": "optimal",
+          "gini_equity_index": 0.520014,
+          "theil_index": 0.550031,
+          "d_p90_km": 107.978,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.006337
+        },
+        {
+          "solver_id": "c4_local_search",
+          "objective_value": 5937974.737113,
+          "status": "feasible",
+          "gini_equity_index": 0.520014,
+          "theil_index": 0.550031,
+          "d_p90_km": 107.978,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.006572
+        },
+        {
+          "solver_id": "c2_milp",
+          "objective_value": 5937974.737113,
+          "status": "feasible",
+          "gini_equity_index": 0.520014,
+          "theil_index": 0.550031,
+          "d_p90_km": 107.978,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.008089
+        },
+        {
+          "solver_id": "c7_tabu_search",
+          "objective_value": 5937974.737113,
+          "status": "feasible",
+          "gini_equity_index": 0.520014,
+          "theil_index": 0.550031,
+          "d_p90_km": 107.978,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.022027
+        },
+        {
+          "solver_id": "c5_simulated_annealing",
+          "objective_value": 5937974.737113,
+          "status": "feasible",
+          "gini_equity_index": 0.520014,
+          "theil_index": 0.550031,
+          "d_p90_km": 107.978,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.307045
+        },
+        {
+          "solver_id": "c6_genetic_algorithm",
+          "objective_value": 5937974.737113,
+          "status": "feasible",
+          "gini_equity_index": 0.520014,
+          "theil_index": 0.550031,
+          "d_p90_km": 107.978,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 2.033441
+        },
+        {
+          "solver_id": "c3_greedy",
+          "objective_value": 11215586.510507,
+          "status": "feasible",
+          "gini_equity_index": 0.333051,
+          "theil_index": 0.336217,
+          "d_p90_km": 35.81,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.000431
+        }
+      ],
+      "results_summary": {
+        "c1_brute_force": {
+          "objective_value": 5937974.737113,
+          "status": "optimal",
+          "gini_equity_index": 0.520014,
+          "theil_index": 0.550031,
+          "d_p90_km": 107.978,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 160.97,
+          "execution_time_sec": 0.006337
+        },
+        "c2_milp": {
+          "objective_value": 5937974.737113,
+          "status": "feasible",
+          "gini_equity_index": 0.520014,
+          "theil_index": 0.550031,
+          "d_p90_km": 107.978,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 160.97,
+          "execution_time_sec": 0.008089
+        },
+        "c3_greedy": {
+          "objective_value": 11215586.510507,
+          "status": "feasible",
+          "gini_equity_index": 0.333051,
+          "theil_index": 0.336217,
+          "d_p90_km": 35.81,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 70.76,
+          "execution_time_sec": 0.000431
+        },
+        "c4_local_search": {
+          "objective_value": 5937974.737113,
+          "status": "feasible",
+          "gini_equity_index": 0.520014,
+          "theil_index": 0.550031,
+          "d_p90_km": 107.978,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 160.97,
+          "execution_time_sec": 0.006572
+        },
+        "c5_simulated_annealing": {
+          "objective_value": 5937974.737113,
+          "status": "feasible",
+          "gini_equity_index": 0.520014,
+          "theil_index": 0.550031,
+          "d_p90_km": 107.978,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 160.97,
+          "execution_time_sec": 0.307045
+        },
+        "c6_genetic_algorithm": {
+          "objective_value": 5937974.737113,
+          "status": "feasible",
+          "gini_equity_index": 0.520014,
+          "theil_index": 0.550031,
+          "d_p90_km": 107.978,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 160.97,
+          "execution_time_sec": 2.033441
+        },
+        "c7_tabu_search": {
+          "objective_value": 5937974.737113,
+          "status": "feasible",
+          "gini_equity_index": 0.520014,
+          "theil_index": 0.550031,
+          "d_p90_km": 107.978,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 160.97,
+          "execution_time_sec": 0.022027
+        }
+      }
+    },
+    "marsabit_desert_demo": {
+      "county": "Marsabit",
+      "best_classical": "c1_brute_force",
+      "ranking_by_objective": [
+        {
+          "solver_id": "c1_brute_force",
+          "objective_value": 870091.876985,
+          "status": "optimal",
+          "gini_equity_index": 0.424134,
+          "theil_index": 0.419555,
+          "d_p90_km": 218.294,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.007186
+        },
+        {
+          "solver_id": "c3_greedy",
+          "objective_value": 870091.876985,
+          "status": "feasible",
+          "gini_equity_index": 0.424134,
+          "theil_index": 0.419555,
+          "d_p90_km": 218.294,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.00046
+        },
+        {
+          "solver_id": "c2_milp",
+          "objective_value": 870091.876985,
+          "status": "feasible",
+          "gini_equity_index": 0.424134,
+          "theil_index": 0.419555,
+          "d_p90_km": 218.294,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.006726
+        },
+        {
+          "solver_id": "c4_local_search",
+          "objective_value": 870091.876985,
+          "status": "feasible",
+          "gini_equity_index": 0.424134,
+          "theil_index": 0.419555,
+          "d_p90_km": 218.294,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.00675
+        },
+        {
+          "solver_id": "c7_tabu_search",
+          "objective_value": 870091.876985,
+          "status": "feasible",
+          "gini_equity_index": 0.424134,
+          "theil_index": 0.419555,
+          "d_p90_km": 218.294,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.015588
+        },
+        {
+          "solver_id": "c5_simulated_annealing",
+          "objective_value": 870091.876985,
+          "status": "feasible",
+          "gini_equity_index": 0.424134,
+          "theil_index": 0.419555,
+          "d_p90_km": 218.294,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.392508
+        },
+        {
+          "solver_id": "c6_genetic_algorithm",
+          "objective_value": 870091.876985,
+          "status": "feasible",
+          "gini_equity_index": 0.424134,
+          "theil_index": 0.419555,
+          "d_p90_km": 218.294,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 2.042713
+        }
+      ],
+      "results_summary": {
+        "c1_brute_force": {
+          "objective_value": 870091.876985,
+          "status": "optimal",
+          "gini_equity_index": 0.424134,
+          "theil_index": 0.419555,
+          "d_p90_km": 218.294,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 373.97,
+          "execution_time_sec": 0.007186
+        },
+        "c2_milp": {
+          "objective_value": 870091.876985,
+          "status": "feasible",
+          "gini_equity_index": 0.424134,
+          "theil_index": 0.419555,
+          "d_p90_km": 218.294,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 373.97,
+          "execution_time_sec": 0.006726
+        },
+        "c3_greedy": {
+          "objective_value": 870091.876985,
+          "status": "feasible",
+          "gini_equity_index": 0.424134,
+          "theil_index": 0.419555,
+          "d_p90_km": 218.294,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 373.97,
+          "execution_time_sec": 0.00046
+        },
+        "c4_local_search": {
+          "objective_value": 870091.876985,
+          "status": "feasible",
+          "gini_equity_index": 0.424134,
+          "theil_index": 0.419555,
+          "d_p90_km": 218.294,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 373.97,
+          "execution_time_sec": 0.00675
+        },
+        "c5_simulated_annealing": {
+          "objective_value": 870091.876985,
+          "status": "feasible",
+          "gini_equity_index": 0.424134,
+          "theil_index": 0.419555,
+          "d_p90_km": 218.294,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 373.97,
+          "execution_time_sec": 0.392508
+        },
+        "c6_genetic_algorithm": {
+          "objective_value": 870091.876985,
+          "status": "feasible",
+          "gini_equity_index": 0.424134,
+          "theil_index": 0.419555,
+          "d_p90_km": 218.294,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 373.97,
+          "execution_time_sec": 2.042713
+        },
+        "c7_tabu_search": {
+          "objective_value": 870091.876985,
+          "status": "feasible",
+          "gini_equity_index": 0.424134,
+          "theil_index": 0.419555,
+          "d_p90_km": 218.294,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 373.97,
+          "execution_time_sec": 0.015588
+        }
+      }
+    },
+    "isiolo_pastoral_demo": {
+      "county": "Isiolo",
+      "best_classical": "c1_brute_force",
+      "ranking_by_objective": [
+        {
+          "solver_id": "c1_brute_force",
+          "objective_value": 928196.631079,
+          "status": "optimal",
+          "gini_equity_index": 0.156316,
+          "theil_index": 0.044259,
+          "d_p90_km": 161.732,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.008114
+        },
+        {
+          "solver_id": "c3_greedy",
+          "objective_value": 928196.631079,
+          "status": "feasible",
+          "gini_equity_index": 0.156316,
+          "theil_index": 0.044259,
+          "d_p90_km": 161.732,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.00024
+        },
+        {
+          "solver_id": "c4_local_search",
+          "objective_value": 928196.631079,
+          "status": "feasible",
+          "gini_equity_index": 0.156316,
+          "theil_index": 0.044259,
+          "d_p90_km": 161.732,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.003575
+        },
+        {
+          "solver_id": "c2_milp",
+          "objective_value": 928196.631079,
+          "status": "feasible",
+          "gini_equity_index": 0.156316,
+          "theil_index": 0.044259,
+          "d_p90_km": 161.732,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.007313
+        },
+        {
+          "solver_id": "c7_tabu_search",
+          "objective_value": 928196.631079,
+          "status": "feasible",
+          "gini_equity_index": 0.156316,
+          "theil_index": 0.044259,
+          "d_p90_km": 161.732,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.016155
+        },
+        {
+          "solver_id": "c5_simulated_annealing",
+          "objective_value": 928196.631079,
+          "status": "feasible",
+          "gini_equity_index": 0.156316,
+          "theil_index": 0.044259,
+          "d_p90_km": 161.732,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.314691
+        },
+        {
+          "solver_id": "c6_genetic_algorithm",
+          "objective_value": 928196.631079,
+          "status": "feasible",
+          "gini_equity_index": 0.156316,
+          "theil_index": 0.044259,
+          "d_p90_km": 161.732,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 2.040355
+        }
+      ],
+      "results_summary": {
+        "c1_brute_force": {
+          "objective_value": 928196.631079,
+          "status": "optimal",
+          "gini_equity_index": 0.156316,
+          "theil_index": 0.044259,
+          "d_p90_km": 161.732,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 382.09,
+          "execution_time_sec": 0.008114
+        },
+        "c2_milp": {
+          "objective_value": 928196.631079,
+          "status": "feasible",
+          "gini_equity_index": 0.156316,
+          "theil_index": 0.044259,
+          "d_p90_km": 161.732,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 382.09,
+          "execution_time_sec": 0.007313
+        },
+        "c3_greedy": {
+          "objective_value": 928196.631079,
+          "status": "feasible",
+          "gini_equity_index": 0.156316,
+          "theil_index": 0.044259,
+          "d_p90_km": 161.732,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 382.09,
+          "execution_time_sec": 0.00024
+        },
+        "c4_local_search": {
+          "objective_value": 928196.631079,
+          "status": "feasible",
+          "gini_equity_index": 0.156316,
+          "theil_index": 0.044259,
+          "d_p90_km": 161.732,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 382.09,
+          "execution_time_sec": 0.003575
+        },
+        "c5_simulated_annealing": {
+          "objective_value": 928196.631079,
+          "status": "feasible",
+          "gini_equity_index": 0.156316,
+          "theil_index": 0.044259,
+          "d_p90_km": 161.732,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 382.09,
+          "execution_time_sec": 0.314691
+        },
+        "c6_genetic_algorithm": {
+          "objective_value": 928196.631079,
+          "status": "feasible",
+          "gini_equity_index": 0.156316,
+          "theil_index": 0.044259,
+          "d_p90_km": 161.732,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 382.09,
+          "execution_time_sec": 2.040355
+        },
+        "c7_tabu_search": {
+          "objective_value": 928196.631079,
+          "status": "feasible",
+          "gini_equity_index": 0.156316,
+          "theil_index": 0.044259,
+          "d_p90_km": 161.732,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 382.09,
+          "execution_time_sec": 0.016155
+        }
+      }
+    },
+    "samburu_pastoral_demo": {
+      "county": "Samburu",
+      "best_classical": "c1_brute_force",
+      "ranking_by_objective": [
+        {
+          "solver_id": "c1_brute_force",
+          "objective_value": 498226.390655,
+          "status": "optimal",
+          "gini_equity_index": 0.409748,
+          "theil_index": 0.393524,
+          "d_p90_km": 106.246,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.004879
+        },
+        {
+          "solver_id": "c3_greedy",
+          "objective_value": 498226.390655,
+          "status": "feasible",
+          "gini_equity_index": 0.409748,
+          "theil_index": 0.393524,
+          "d_p90_km": 106.246,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.00022
+        },
+        {
+          "solver_id": "c2_milp",
+          "objective_value": 498226.390655,
+          "status": "feasible",
+          "gini_equity_index": 0.409748,
+          "theil_index": 0.393524,
+          "d_p90_km": 106.246,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.006167
+        },
+        {
+          "solver_id": "c4_local_search",
+          "objective_value": 498226.390655,
+          "status": "feasible",
+          "gini_equity_index": 0.409748,
+          "theil_index": 0.393524,
+          "d_p90_km": 106.246,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.006988
+        },
+        {
+          "solver_id": "c7_tabu_search",
+          "objective_value": 498226.390655,
+          "status": "feasible",
+          "gini_equity_index": 0.409748,
+          "theil_index": 0.393524,
+          "d_p90_km": 106.246,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.01525
+        },
+        {
+          "solver_id": "c5_simulated_annealing",
+          "objective_value": 498226.390655,
+          "status": "feasible",
+          "gini_equity_index": 0.409748,
+          "theil_index": 0.393524,
+          "d_p90_km": 106.246,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.294204
+        },
+        {
+          "solver_id": "c6_genetic_algorithm",
+          "objective_value": 498226.390655,
+          "status": "feasible",
+          "gini_equity_index": 0.409748,
+          "theil_index": 0.393524,
+          "d_p90_km": 106.246,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 2.037533
+        }
+      ],
+      "results_summary": {
+        "c1_brute_force": {
+          "objective_value": 498226.390655,
+          "status": "optimal",
+          "gini_equity_index": 0.409748,
+          "theil_index": 0.393524,
+          "d_p90_km": 106.246,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 185.61,
+          "execution_time_sec": 0.004879
+        },
+        "c2_milp": {
+          "objective_value": 498226.390655,
+          "status": "feasible",
+          "gini_equity_index": 0.409748,
+          "theil_index": 0.393524,
+          "d_p90_km": 106.246,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 185.61,
+          "execution_time_sec": 0.006167
+        },
+        "c3_greedy": {
+          "objective_value": 498226.390655,
+          "status": "feasible",
+          "gini_equity_index": 0.409748,
+          "theil_index": 0.393524,
+          "d_p90_km": 106.246,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 185.61,
+          "execution_time_sec": 0.00022
+        },
+        "c4_local_search": {
+          "objective_value": 498226.390655,
+          "status": "feasible",
+          "gini_equity_index": 0.409748,
+          "theil_index": 0.393524,
+          "d_p90_km": 106.246,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 185.61,
+          "execution_time_sec": 0.006988
+        },
+        "c5_simulated_annealing": {
+          "objective_value": 498226.390655,
+          "status": "feasible",
+          "gini_equity_index": 0.409748,
+          "theil_index": 0.393524,
+          "d_p90_km": 106.246,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 185.61,
+          "execution_time_sec": 0.294204
+        },
+        "c6_genetic_algorithm": {
+          "objective_value": 498226.390655,
+          "status": "feasible",
+          "gini_equity_index": 0.409748,
+          "theil_index": 0.393524,
+          "d_p90_km": 106.246,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 185.61,
+          "execution_time_sec": 2.037533
+        },
+        "c7_tabu_search": {
+          "objective_value": 498226.390655,
+          "status": "feasible",
+          "gini_equity_index": 0.409748,
+          "theil_index": 0.393524,
+          "d_p90_km": 106.246,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 185.61,
+          "execution_time_sec": 0.01525
+        }
+      }
+    },
+    "lamu_coastal_demo": {
+      "county": "Lamu",
+      "best_classical": "c1_brute_force",
+      "ranking_by_objective": [
+        {
+          "solver_id": "c1_brute_force",
+          "objective_value": 298473.319993,
+          "status": "optimal",
+          "gini_equity_index": 0.19763,
+          "theil_index": 0.077902,
+          "d_p90_km": 85.416,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.005444
+        },
+        {
+          "solver_id": "c2_milp",
+          "objective_value": 298473.319993,
+          "status": "feasible",
+          "gini_equity_index": 0.19763,
+          "theil_index": 0.077902,
+          "d_p90_km": 85.416,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.007045
+        },
+        {
+          "solver_id": "c6_genetic_algorithm",
+          "objective_value": 298473.319993,
+          "status": "feasible",
+          "gini_equity_index": 0.19763,
+          "theil_index": 0.077902,
+          "d_p90_km": 85.416,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 2.042254
+        },
+        {
+          "solver_id": "c3_greedy",
+          "objective_value": 341922.235769,
+          "status": "feasible",
+          "gini_equity_index": 0.393489,
+          "theil_index": 0.372709,
+          "d_p90_km": 78.296,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.000359
+        },
+        {
+          "solver_id": "c4_local_search",
+          "objective_value": 341922.235769,
+          "status": "feasible",
+          "gini_equity_index": 0.393489,
+          "theil_index": 0.372709,
+          "d_p90_km": 78.296,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.006816
+        },
+        {
+          "solver_id": "c7_tabu_search",
+          "objective_value": 341922.235769,
+          "status": "feasible",
+          "gini_equity_index": 0.393489,
+          "theil_index": 0.372709,
+          "d_p90_km": 78.296,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.018939
+        },
+        {
+          "solver_id": "c5_simulated_annealing",
+          "objective_value": 341922.235769,
+          "status": "feasible",
+          "gini_equity_index": 0.393489,
+          "theil_index": 0.372709,
+          "d_p90_km": 78.296,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.300271
+        }
+      ],
+      "results_summary": {
+        "c1_brute_force": {
+          "objective_value": 298473.319993,
+          "status": "optimal",
+          "gini_equity_index": 0.19763,
+          "theil_index": 0.077902,
+          "d_p90_km": 85.416,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 181.99,
+          "execution_time_sec": 0.005444
+        },
+        "c2_milp": {
+          "objective_value": 298473.319993,
+          "status": "feasible",
+          "gini_equity_index": 0.19763,
+          "theil_index": 0.077902,
+          "d_p90_km": 85.416,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 181.99,
+          "execution_time_sec": 0.007045
+        },
+        "c3_greedy": {
+          "objective_value": 341922.235769,
+          "status": "feasible",
+          "gini_equity_index": 0.393489,
+          "theil_index": 0.372709,
+          "d_p90_km": 78.296,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 140.08,
+          "execution_time_sec": 0.000359
+        },
+        "c4_local_search": {
+          "objective_value": 341922.235769,
+          "status": "feasible",
+          "gini_equity_index": 0.393489,
+          "theil_index": 0.372709,
+          "d_p90_km": 78.296,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 140.08,
+          "execution_time_sec": 0.006816
+        },
+        "c5_simulated_annealing": {
+          "objective_value": 341922.235769,
+          "status": "feasible",
+          "gini_equity_index": 0.393489,
+          "theil_index": 0.372709,
+          "d_p90_km": 78.296,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 140.08,
+          "execution_time_sec": 0.300271
+        },
+        "c6_genetic_algorithm": {
+          "objective_value": 298473.319993,
+          "status": "feasible",
+          "gini_equity_index": 0.19763,
+          "theil_index": 0.077902,
+          "d_p90_km": 85.416,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 181.99,
+          "execution_time_sec": 2.042254
+        },
+        "c7_tabu_search": {
+          "objective_value": 341922.235769,
+          "status": "feasible",
+          "gini_equity_index": 0.393489,
+          "theil_index": 0.372709,
+          "d_p90_km": 78.296,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 140.08,
+          "execution_time_sec": 0.018939
+        }
+      }
+    },
+    "west_pokot_demo": {
+      "county": "West Pokot",
+      "best_classical": "c1_brute_force",
+      "ranking_by_objective": [
+        {
+          "solver_id": "c1_brute_force",
+          "objective_value": 2868682.625349,
+          "status": "optimal",
+          "gini_equity_index": 0.448073,
+          "theil_index": 0.412398,
+          "d_p90_km": 47.08,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.007705
+        },
+        {
+          "solver_id": "c3_greedy",
+          "objective_value": 2868682.625349,
+          "status": "feasible",
+          "gini_equity_index": 0.448073,
+          "theil_index": 0.412398,
+          "d_p90_km": 47.08,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.000357
+        },
+        {
+          "solver_id": "c4_local_search",
+          "objective_value": 2868682.625349,
+          "status": "feasible",
+          "gini_equity_index": 0.448073,
+          "theil_index": 0.412398,
+          "d_p90_km": 47.08,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.006774
+        },
+        {
+          "solver_id": "c2_milp",
+          "objective_value": 2868682.625349,
+          "status": "feasible",
+          "gini_equity_index": 0.448073,
+          "theil_index": 0.412398,
+          "d_p90_km": 47.08,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.007928
+        },
+        {
+          "solver_id": "c7_tabu_search",
+          "objective_value": 2868682.625349,
+          "status": "feasible",
+          "gini_equity_index": 0.448073,
+          "theil_index": 0.412398,
+          "d_p90_km": 47.08,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.011379
+        },
+        {
+          "solver_id": "c5_simulated_annealing",
+          "objective_value": 2868682.625349,
+          "status": "feasible",
+          "gini_equity_index": 0.448073,
+          "theil_index": 0.412398,
+          "d_p90_km": 47.08,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.284291
+        },
+        {
+          "solver_id": "c6_genetic_algorithm",
+          "objective_value": 2868682.625349,
+          "status": "feasible",
+          "gini_equity_index": 0.448073,
+          "theil_index": 0.412398,
+          "d_p90_km": 47.08,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 2.028849
+        }
+      ],
+      "results_summary": {
+        "c1_brute_force": {
+          "objective_value": 2868682.625349,
+          "status": "optimal",
+          "gini_equity_index": 0.448073,
+          "theil_index": 0.412398,
+          "d_p90_km": 47.08,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 77.16,
+          "execution_time_sec": 0.007705
+        },
+        "c2_milp": {
+          "objective_value": 2868682.625349,
+          "status": "feasible",
+          "gini_equity_index": 0.448073,
+          "theil_index": 0.412398,
+          "d_p90_km": 47.08,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 77.16,
+          "execution_time_sec": 0.007928
+        },
+        "c3_greedy": {
+          "objective_value": 2868682.625349,
+          "status": "feasible",
+          "gini_equity_index": 0.448073,
+          "theil_index": 0.412398,
+          "d_p90_km": 47.08,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 77.16,
+          "execution_time_sec": 0.000357
+        },
+        "c4_local_search": {
+          "objective_value": 2868682.625349,
+          "status": "feasible",
+          "gini_equity_index": 0.448073,
+          "theil_index": 0.412398,
+          "d_p90_km": 47.08,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 77.16,
+          "execution_time_sec": 0.006774
+        },
+        "c5_simulated_annealing": {
+          "objective_value": 2868682.625349,
+          "status": "feasible",
+          "gini_equity_index": 0.448073,
+          "theil_index": 0.412398,
+          "d_p90_km": 47.08,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 77.16,
+          "execution_time_sec": 0.284291
+        },
+        "c6_genetic_algorithm": {
+          "objective_value": 2868682.625349,
+          "status": "feasible",
+          "gini_equity_index": 0.448073,
+          "theil_index": 0.412398,
+          "d_p90_km": 47.08,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 77.16,
+          "execution_time_sec": 2.028849
+        },
+        "c7_tabu_search": {
+          "objective_value": 2868682.625349,
+          "status": "feasible",
+          "gini_equity_index": 0.448073,
+          "theil_index": 0.412398,
+          "d_p90_km": 47.08,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 77.16,
+          "execution_time_sec": 0.011379
+        }
+      }
+    },
+    "tana_river_demo": {
+      "county": "Tana River",
+      "best_classical": "c1_brute_force",
+      "ranking_by_objective": [
+        {
+          "solver_id": "c1_brute_force",
+          "objective_value": 5316680.967368,
+          "status": "optimal",
+          "gini_equity_index": 0.510865,
+          "theil_index": 0.541643,
+          "d_p90_km": 167.632,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.003633
+        },
+        {
+          "solver_id": "c3_greedy",
+          "objective_value": 5316680.967368,
+          "status": "feasible",
+          "gini_equity_index": 0.510865,
+          "theil_index": 0.541643,
+          "d_p90_km": 167.632,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.000489
+        },
+        {
+          "solver_id": "c2_milp",
+          "objective_value": 5316680.967368,
+          "status": "feasible",
+          "gini_equity_index": 0.510865,
+          "theil_index": 0.541643,
+          "d_p90_km": 167.632,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.00319
+        },
+        {
+          "solver_id": "c4_local_search",
+          "objective_value": 5316680.967368,
+          "status": "feasible",
+          "gini_equity_index": 0.510865,
+          "theil_index": 0.541643,
+          "d_p90_km": 167.632,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.003961
+        },
+        {
+          "solver_id": "c7_tabu_search",
+          "objective_value": 5316680.967368,
+          "status": "feasible",
+          "gini_equity_index": 0.510865,
+          "theil_index": 0.541643,
+          "d_p90_km": 167.632,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.018471
+        },
+        {
+          "solver_id": "c5_simulated_annealing",
+          "objective_value": 5316680.967368,
+          "status": "feasible",
+          "gini_equity_index": 0.510865,
+          "theil_index": 0.541643,
+          "d_p90_km": 167.632,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.27802
+        },
+        {
+          "solver_id": "c6_genetic_algorithm",
+          "objective_value": 5316680.967368,
+          "status": "feasible",
+          "gini_equity_index": 0.510865,
+          "theil_index": 0.541643,
+          "d_p90_km": 167.632,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 2.042744
+        }
+      ],
+      "results_summary": {
+        "c1_brute_force": {
+          "objective_value": 5316680.967368,
+          "status": "optimal",
+          "gini_equity_index": 0.510865,
+          "theil_index": 0.541643,
+          "d_p90_km": 167.632,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 253.57,
+          "execution_time_sec": 0.003633
+        },
+        "c2_milp": {
+          "objective_value": 5316680.967368,
+          "status": "feasible",
+          "gini_equity_index": 0.510865,
+          "theil_index": 0.541643,
+          "d_p90_km": 167.632,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 253.57,
+          "execution_time_sec": 0.00319
+        },
+        "c3_greedy": {
+          "objective_value": 5316680.967368,
+          "status": "feasible",
+          "gini_equity_index": 0.510865,
+          "theil_index": 0.541643,
+          "d_p90_km": 167.632,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 253.57,
+          "execution_time_sec": 0.000489
+        },
+        "c4_local_search": {
+          "objective_value": 5316680.967368,
+          "status": "feasible",
+          "gini_equity_index": 0.510865,
+          "theil_index": 0.541643,
+          "d_p90_km": 167.632,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 253.57,
+          "execution_time_sec": 0.003961
+        },
+        "c5_simulated_annealing": {
+          "objective_value": 5316680.967368,
+          "status": "feasible",
+          "gini_equity_index": 0.510865,
+          "theil_index": 0.541643,
+          "d_p90_km": 167.632,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 253.57,
+          "execution_time_sec": 0.27802
+        },
+        "c6_genetic_algorithm": {
+          "objective_value": 5316680.967368,
+          "status": "feasible",
+          "gini_equity_index": 0.510865,
+          "theil_index": 0.541643,
+          "d_p90_km": 167.632,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 253.57,
+          "execution_time_sec": 2.042744
+        },
+        "c7_tabu_search": {
+          "objective_value": 5316680.967368,
+          "status": "feasible",
+          "gini_equity_index": 0.510865,
+          "theil_index": 0.541643,
+          "d_p90_km": 167.632,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 253.57,
+          "execution_time_sec": 0.018471
+        }
+      }
+    },
+    "narok_pastoral_demo": {
+      "county": "Narok",
+      "best_classical": "c1_brute_force",
+      "ranking_by_objective": [
+        {
+          "solver_id": "c1_brute_force",
+          "objective_value": 18765993.68278,
+          "status": "optimal",
+          "gini_equity_index": 0.344212,
+          "theil_index": 0.365592,
+          "d_p90_km": 135.344,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.007067
+        },
+        {
+          "solver_id": "c2_milp",
+          "objective_value": 18765993.68278,
+          "status": "feasible",
+          "gini_equity_index": 0.344212,
+          "theil_index": 0.365592,
+          "d_p90_km": 135.344,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.006994
+        },
+        {
+          "solver_id": "c6_genetic_algorithm",
+          "objective_value": 18765993.68278,
+          "status": "feasible",
+          "gini_equity_index": 0.344212,
+          "theil_index": 0.365592,
+          "d_p90_km": 135.344,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 2.046359
+        },
+        {
+          "solver_id": "c3_greedy",
+          "objective_value": 18827935.843712,
+          "status": "feasible",
+          "gini_equity_index": 0.295484,
+          "theil_index": 0.156002,
+          "d_p90_km": 158.69,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.000714
+        },
+        {
+          "solver_id": "c4_local_search",
+          "objective_value": 18827935.843712,
+          "status": "feasible",
+          "gini_equity_index": 0.295484,
+          "theil_index": 0.156002,
+          "d_p90_km": 158.69,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.007239
+        },
+        {
+          "solver_id": "c7_tabu_search",
+          "objective_value": 18827935.843712,
+          "status": "feasible",
+          "gini_equity_index": 0.295484,
+          "theil_index": 0.156002,
+          "d_p90_km": 158.69,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.016077
+        },
+        {
+          "solver_id": "c5_simulated_annealing",
+          "objective_value": 18827935.843712,
+          "status": "feasible",
+          "gini_equity_index": 0.295484,
+          "theil_index": 0.156002,
+          "d_p90_km": 158.69,
+          "who_compliance_pct": 50.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.405529
+        }
+      ],
+      "results_summary": {
+        "c1_brute_force": {
+          "objective_value": 18765993.68278,
+          "status": "optimal",
+          "gini_equity_index": 0.344212,
+          "theil_index": 0.365592,
+          "d_p90_km": 135.344,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 263.81,
+          "execution_time_sec": 0.007067
+        },
+        "c2_milp": {
+          "objective_value": 18765993.68278,
+          "status": "feasible",
+          "gini_equity_index": 0.344212,
+          "theil_index": 0.365592,
+          "d_p90_km": 135.344,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 263.81,
+          "execution_time_sec": 0.006994
+        },
+        "c3_greedy": {
+          "objective_value": 18827935.843712,
+          "status": "feasible",
+          "gini_equity_index": 0.295484,
+          "theil_index": 0.156002,
+          "d_p90_km": 158.69,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 308.33,
+          "execution_time_sec": 0.000714
+        },
+        "c4_local_search": {
+          "objective_value": 18827935.843712,
+          "status": "feasible",
+          "gini_equity_index": 0.295484,
+          "theil_index": 0.156002,
+          "d_p90_km": 158.69,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 308.33,
+          "execution_time_sec": 0.007239
+        },
+        "c5_simulated_annealing": {
+          "objective_value": 18827935.843712,
+          "status": "feasible",
+          "gini_equity_index": 0.295484,
+          "theil_index": 0.156002,
+          "d_p90_km": 158.69,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 308.33,
+          "execution_time_sec": 0.405529
+        },
+        "c6_genetic_algorithm": {
+          "objective_value": 18765993.68278,
+          "status": "feasible",
+          "gini_equity_index": 0.344212,
+          "theil_index": 0.365592,
+          "d_p90_km": 135.344,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 263.81,
+          "execution_time_sec": 2.046359
+        },
+        "c7_tabu_search": {
+          "objective_value": 18827935.843712,
+          "status": "feasible",
+          "gini_equity_index": 0.295484,
+          "theil_index": 0.156002,
+          "d_p90_km": 158.69,
+          "who_compliance_pct": 50.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 308.33,
+          "execution_time_sec": 0.016077
+        }
+      }
+    },
+    "kwale_coastal_demo": {
+      "county": "Kwale",
+      "best_classical": "c1_brute_force",
+      "ranking_by_objective": [
+        {
+          "solver_id": "c1_brute_force",
+          "objective_value": 361421.904606,
+          "status": "optimal",
+          "gini_equity_index": 0.374762,
+          "theil_index": 0.254115,
+          "d_p90_km": 70.69,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.003275
+        },
+        {
+          "solver_id": "c2_milp",
+          "objective_value": 361421.904606,
+          "status": "feasible",
+          "gini_equity_index": 0.374762,
+          "theil_index": 0.254115,
+          "d_p90_km": 70.69,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.003742
+        },
+        {
+          "solver_id": "c4_local_search",
+          "objective_value": 361421.904606,
+          "status": "feasible",
+          "gini_equity_index": 0.374762,
+          "theil_index": 0.254115,
+          "d_p90_km": 70.69,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.005631
+        },
+        {
+          "solver_id": "c7_tabu_search",
+          "objective_value": 361421.904606,
+          "status": "feasible",
+          "gini_equity_index": 0.374762,
+          "theil_index": 0.254115,
+          "d_p90_km": 70.69,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.013426
+        },
+        {
+          "solver_id": "c6_genetic_algorithm",
+          "objective_value": 361421.904606,
+          "status": "feasible",
+          "gini_equity_index": 0.374762,
+          "theil_index": 0.254115,
+          "d_p90_km": 70.69,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 2.032563
+        },
+        {
+          "solver_id": "c3_greedy",
+          "objective_value": 375986.00186,
+          "status": "feasible",
+          "gini_equity_index": 0.536525,
+          "theil_index": 0.577235,
+          "d_p90_km": 73.802,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.000226
+        },
+        {
+          "solver_id": "c5_simulated_annealing",
+          "objective_value": 375986.00186,
+          "status": "feasible",
+          "gini_equity_index": 0.536525,
+          "theil_index": 0.577235,
+          "d_p90_km": 73.802,
+          "who_compliance_pct": 100.0,
+          "bottom_quintile_coverage_pct": 100.0,
+          "execution_time_sec": 0.290986
+        }
+      ],
+      "results_summary": {
+        "c1_brute_force": {
+          "objective_value": 361421.904606,
+          "status": "optimal",
+          "gini_equity_index": 0.374762,
+          "theil_index": 0.254115,
+          "d_p90_km": 70.69,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 122.3,
+          "execution_time_sec": 0.003275
+        },
+        "c2_milp": {
+          "objective_value": 361421.904606,
+          "status": "feasible",
+          "gini_equity_index": 0.374762,
+          "theil_index": 0.254115,
+          "d_p90_km": 70.69,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 122.3,
+          "execution_time_sec": 0.003742
+        },
+        "c3_greedy": {
+          "objective_value": 375986.00186,
+          "status": "feasible",
+          "gini_equity_index": 0.536525,
+          "theil_index": 0.577235,
+          "d_p90_km": 73.802,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 105.68,
+          "execution_time_sec": 0.000226
+        },
+        "c4_local_search": {
+          "objective_value": 361421.904606,
+          "status": "feasible",
+          "gini_equity_index": 0.374762,
+          "theil_index": 0.254115,
+          "d_p90_km": 70.69,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 122.3,
+          "execution_time_sec": 0.005631
+        },
+        "c5_simulated_annealing": {
+          "objective_value": 375986.00186,
+          "status": "feasible",
+          "gini_equity_index": 0.536525,
+          "theil_index": 0.577235,
+          "d_p90_km": 73.802,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 105.68,
+          "execution_time_sec": 0.290986
+        },
+        "c6_genetic_algorithm": {
+          "objective_value": 361421.904606,
+          "status": "feasible",
+          "gini_equity_index": 0.374762,
+          "theil_index": 0.254115,
+          "d_p90_km": 70.69,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 122.3,
+          "execution_time_sec": 2.032563
+        },
+        "c7_tabu_search": {
+          "objective_value": 361421.904606,
+          "status": "feasible",
+          "gini_equity_index": 0.374762,
+          "theil_index": 0.254115,
+          "d_p90_km": 70.69,
+          "who_compliance_pct": 100.0,
+          "population_coverage_pct": 100.0,
+          "total_travel_km": 122.3,
+          "execution_time_sec": 0.013426
+        }
+      }
+    }
+  },
+  "q_solve_judging": {
+    "judging_context": {
+      "source": "Q-SOLVE Kenya 2026 Judging Tool V02",
+      "docs": "docs/judging/Q_SOLVE_JUDGING_CONTEXT.md",
+      "pdf": "docs/judging/Q-SOLVE_Kenya_2026_Judging_Tool_V02.pdf",
+      "criteria": {
+        "JC1": {
+          "name": "Problem Understanding and Local Relevance",
+          "max_score": 15,
+          "focus": "Kenyan CHW deployment across marginalised counties; users, constraints, consequences"
+        },
+        "JC2": {
+          "name": "Quantum Computing Relevance and Necessity",
+          "max_score": 20,
+          "focus": "Bottleneck identification, classical baselines, no exaggerated advantage claims"
+        },
+        "JC3": {
+          "name": "Technical Correctness and Scientific Integrity",
+          "max_score": 15,
+          "focus": "Shared H(x), explicit assumptions/limits, reproducible formulation"
+        },
+        "JC4": {
+          "name": "Evidence, Benchmarking and Validation",
+          "max_score": 15,
+          "focus": "Quantitative multi-county baselines, metrics, robustness/scalability"
+        },
+        "JC5": {
+          "name": "Innovation and Intellectual Contribution",
+          "max_score": 12,
+          "focus": "Equity metrics suite, classical ladder, honest hybrid quantum path"
+        },
+        "JC6": {
+          "name": "Sustainable Development Impact (SDGs 2, 3 and 8)",
+          "max_score": 13,
+          "focus": "Primary SDG 3 (Good Health); CHW coverage/equity/workload outcomes"
+        },
+        "JC7": {
+          "name": "Feasibility, Scalability and Adoption",
+          "max_score": 10,
+          "focus": "Runs on qBraid Small VS Code + free simulator; staged classical\u2192quantum path"
+        }
+      },
+      "final_score_formula": "(Raw Score \u00d7 Evidence Confidence Multiplier) \u2212 Quantum-Washing Penalty",
+      "evidence_multipliers": {
+        "HIGH": 1.0,
+        "MODERATE": 0.95,
+        "LOW": 0.85
+      },
+      "quantum_washing_penalties": {
+        "none": 0,
+        "weak_justification": -3,
+        "unsupported_advantage": -6,
+        "promotional_misuse": -10
+      },
+      "focus_sdg": {
+        "primary": "SDG 3: Good Health and Well-Being",
+        "secondary": [
+          "SDG 8: Decent Work (CHW workload protection)",
+          "SDG 2: Zero Hunger (nutrition outreach support)"
+        ]
+      },
+      "environment_target": {
+        "qbraid_lab_instance": "Small \u00b7 VS Code",
+        "vcpus": 2,
+        "ram_gb": 4,
+        "classical_target": "local_cpu",
+        "quantum_default": "free_simulator"
+      }
+    },
+    "auto_checklist": {
+      "JC1": {
+        "local_kenya_scope": "PASS",
+        "multi_county_not_single_demo": "PASS",
+        "notes": "14 counties / 14 scenarios executed"
+      },
+      "JC2": {
+        "classical_baselines_present": "PASS",
+        "bottleneck_before_quantum_claim": "PASS",
+        "no_exaggerated_advantage": "PASS",
+        "notes": "No classical bottleneck yet \u2014 do not claim quantum necessity"
+      },
+      "JC3": {
+        "shared_objective_H": "PASS",
+        "reproducible_suite": "PASS"
+      },
+      "JC4": {
+        "quantitative_multi_location": "PASS",
+        "multi_method_benchmark": "PASS",
+        "equity_beyond_gini": "PASS"
+      },
+      "JC5": {
+        "classical_suite_plus_honest_quantum_path": "PASS"
+      },
+      "JC6": {
+        "sdg3_health_metrics": "PASS",
+        "focus_sdg": "SDG 3: Good Health and Well-Being"
+      },
+      "JC7": {
+        "runs_on_small_lab_or_free_sim": "PASS",
+        "qbraid_instance": "Small \u00b7 VS Code"
+      }
+    },
+    "evidence_gaps": [],
+    "suggested_self_score": {
+      "criterion_scores": {
+        "JC1": 12,
+        "JC2": 14,
+        "JC3": 12,
+        "JC4": 12,
+        "JC5": 8,
+        "JC6": 10,
+        "JC7": 8
+      },
+      "raw_score": 76,
+      "evidence_confidence": "HIGH",
+      "multiplier": 1.0,
+      "quantum_washing": "none",
+      "penalty": 0,
+      "final_score_estimate": 76.0,
+      "disclaimer": "Self-estimate for team steering only \u2014 official scores are by judges."
+    },
+    "guidance": [
+      "Run all counties (not one location) for JC1/JC4.",
+      "Exhaust classical C1\u2013C7 before any quantum-necessity claim (JC2).",
+      "Never claim quantum advantage vs greedy alone (quantum-washing risk).",
+      "Keep SDG 3 metrics (coverage, equity, WHO, d_P90) visible (JC6).",
+      "Prefer qBraid Small VS Code + free simulator for JC7 realism."
+    ]
+  }
+}

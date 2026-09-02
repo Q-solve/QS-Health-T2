@@ -1,0 +1,483 @@
+{
+  "scenario_name": "turkana_pastoral_demo",
+  "execution_target": "local_cpu",
+  "time_budget_sec": 3.0,
+  "solvers_run": [
+    "c1_brute_force",
+    "c2_milp",
+    "c3_greedy",
+    "c4_local_search",
+    "c5_simulated_annealing",
+    "c6_genetic_algorithm",
+    "c7_tabu_search"
+  ],
+  "available_solvers": [
+    "c1_brute_force",
+    "c2_milp",
+    "c3_greedy",
+    "c4_local_search",
+    "c5_simulated_annealing",
+    "c6_genetic_algorithm",
+    "c7_tabu_search"
+  ],
+  "results": {
+    "c1_brute_force": {
+      "scenario_name": "turkana_pastoral_demo",
+      "solver_type": "c1_brute_force",
+      "bitstring": "100011",
+      "population_coverage_pct": 100.0,
+      "total_travel_km": 343.6,
+      "gini_equity_index": 0.274932,
+      "assignments": [
+        {
+          "facility_id": "F_TUR_1",
+          "facility_name": "Lodwar County Referral Hospital",
+          "community_id": "CU_TUR_1",
+          "community_name": "Kalobeyei Settlement Unit",
+          "assigned_chws": 1,
+          "walking_distance_km": 177.93,
+          "demand_covered": 1850
+        },
+        {
+          "facility_id": "F_TUR_2",
+          "facility_name": "Kakuma Sub-County Hospital",
+          "community_id": "CU_TUR_2",
+          "community_name": "Songot Pastoral Village",
+          "assigned_chws": 1,
+          "walking_distance_km": 36.23,
+          "demand_covered": 920
+        },
+        {
+          "facility_id": "F_TUR_2",
+          "facility_name": "Kakuma Sub-County Hospital",
+          "community_id": "CU_TUR_3",
+          "community_name": "Oropoi Border Homesteads",
+          "assigned_chws": 1,
+          "walking_distance_km": 129.44,
+          "demand_covered": 640
+        }
+      ],
+      "execution_time_sec": 0.006978,
+      "qbraid_job_id": null,
+      "qbraid_synced": false,
+      "objective_value": 921266.562284,
+      "status": "optimal",
+      "who_compliance_pct": 100.0,
+      "d_p90_km": 168.232,
+      "theil_index": 0.152851,
+      "atkinson_index": 0.083565,
+      "bottom_quintile_coverage_pct": 100.0,
+      "peak_memory_mb": null,
+      "extra_metrics": {
+        "evaluated": 8,
+        "search_space": 8,
+        "best_objective": 921266.562284051,
+        "seed": 42,
+        "execution_target": "local_cpu",
+        "time_budget_sec": 3.0
+      }
+    },
+    "c2_milp": {
+      "scenario_name": "turkana_pastoral_demo",
+      "solver_type": "c2_milp",
+      "bitstring": "100011",
+      "population_coverage_pct": 100.0,
+      "total_travel_km": 343.6,
+      "gini_equity_index": 0.274932,
+      "assignments": [
+        {
+          "facility_id": "F_TUR_1",
+          "facility_name": "Lodwar County Referral Hospital",
+          "community_id": "CU_TUR_1",
+          "community_name": "Kalobeyei Settlement Unit",
+          "assigned_chws": 1,
+          "walking_distance_km": 177.93,
+          "demand_covered": 1850
+        },
+        {
+          "facility_id": "F_TUR_2",
+          "facility_name": "Kakuma Sub-County Hospital",
+          "community_id": "CU_TUR_2",
+          "community_name": "Songot Pastoral Village",
+          "assigned_chws": 1,
+          "walking_distance_km": 36.23,
+          "demand_covered": 920
+        },
+        {
+          "facility_id": "F_TUR_2",
+          "facility_name": "Kakuma Sub-County Hospital",
+          "community_id": "CU_TUR_3",
+          "community_name": "Oropoi Border Homesteads",
+          "assigned_chws": 1,
+          "walking_distance_km": 129.44,
+          "demand_covered": 640
+        }
+      ],
+      "execution_time_sec": 0.007413,
+      "qbraid_job_id": null,
+      "qbraid_synced": false,
+      "objective_value": 921266.562284,
+      "status": "feasible",
+      "who_compliance_pct": 100.0,
+      "d_p90_km": 168.232,
+      "theil_index": 0.152851,
+      "atkinson_index": 0.083565,
+      "bottom_quintile_coverage_pct": 100.0,
+      "peak_memory_mb": null,
+      "extra_metrics": {
+        "evaluated": 8,
+        "search_space": 8,
+        "best_objective": 921266.562284051,
+        "seed": 42,
+        "pulp_available": false,
+        "fallback": "c1_brute_force",
+        "execution_target": "local_cpu",
+        "time_budget_sec": 3.0
+      }
+    },
+    "c3_greedy": {
+      "scenario_name": "turkana_pastoral_demo",
+      "solver_type": "c3_greedy",
+      "bitstring": "011100",
+      "population_coverage_pct": 100.0,
+      "total_travel_km": 512.19,
+      "gini_equity_index": 0.375759,
+      "assignments": [
+        {
+          "facility_id": "F_TUR_1",
+          "facility_name": "Lodwar County Referral Hospital",
+          "community_id": "CU_TUR_2",
+          "community_name": "Songot Pastoral Village",
+          "assigned_chws": 1,
+          "walking_distance_km": 204.94,
+          "demand_covered": 920
+        },
+        {
+          "facility_id": "F_TUR_1",
+          "facility_name": "Lodwar County Referral Hospital",
+          "community_id": "CU_TUR_3",
+          "community_name": "Oropoi Border Homesteads",
+          "assigned_chws": 1,
+          "walking_distance_km": 297.97,
+          "demand_covered": 640
+        },
+        {
+          "facility_id": "F_TUR_2",
+          "facility_name": "Kakuma Sub-County Hospital",
+          "community_id": "CU_TUR_1",
+          "community_name": "Kalobeyei Settlement Unit",
+          "assigned_chws": 1,
+          "walking_distance_km": 9.28,
+          "demand_covered": 1850
+        }
+      ],
+      "execution_time_sec": 0.000432,
+      "qbraid_job_id": null,
+      "qbraid_synced": false,
+      "objective_value": 987634.407711,
+      "status": "feasible",
+      "who_compliance_pct": 100.0,
+      "d_p90_km": 279.364,
+      "theil_index": 0.344298,
+      "atkinson_index": 0.219814,
+      "bottom_quintile_coverage_pct": 100.0,
+      "peak_memory_mb": null,
+      "extra_metrics": {
+        "strategy": "nearest_with_capacity",
+        "overloads_allowed": true,
+        "execution_target": "local_cpu",
+        "time_budget_sec": 3.0,
+        "seed": 42
+      }
+    },
+    "c4_local_search": {
+      "scenario_name": "turkana_pastoral_demo",
+      "solver_type": "c4_local_search",
+      "bitstring": "011100",
+      "population_coverage_pct": 100.0,
+      "total_travel_km": 512.19,
+      "gini_equity_index": 0.375759,
+      "assignments": [
+        {
+          "facility_id": "F_TUR_1",
+          "facility_name": "Lodwar County Referral Hospital",
+          "community_id": "CU_TUR_2",
+          "community_name": "Songot Pastoral Village",
+          "assigned_chws": 1,
+          "walking_distance_km": 204.94,
+          "demand_covered": 920
+        },
+        {
+          "facility_id": "F_TUR_1",
+          "facility_name": "Lodwar County Referral Hospital",
+          "community_id": "CU_TUR_3",
+          "community_name": "Oropoi Border Homesteads",
+          "assigned_chws": 1,
+          "walking_distance_km": 297.97,
+          "demand_covered": 640
+        },
+        {
+          "facility_id": "F_TUR_2",
+          "facility_name": "Kakuma Sub-County Hospital",
+          "community_id": "CU_TUR_1",
+          "community_name": "Kalobeyei Settlement Unit",
+          "assigned_chws": 1,
+          "walking_distance_km": 9.28,
+          "demand_covered": 1850
+        }
+      ],
+      "execution_time_sec": 0.0068,
+      "qbraid_job_id": null,
+      "qbraid_synced": false,
+      "objective_value": 987634.407711,
+      "status": "feasible",
+      "who_compliance_pct": 100.0,
+      "d_p90_km": 279.364,
+      "theil_index": 0.344298,
+      "atkinson_index": 0.219814,
+      "bottom_quintile_coverage_pct": 100.0,
+      "peak_memory_mb": null,
+      "extra_metrics": {
+        "moves_evaluated": 5,
+        "best_objective": 987634.4077107324,
+        "execution_target": "local_cpu",
+        "time_budget_sec": 3.0,
+        "seed": 42
+      }
+    },
+    "c5_simulated_annealing": {
+      "scenario_name": "turkana_pastoral_demo",
+      "solver_type": "c5_simulated_annealing",
+      "bitstring": "011100",
+      "population_coverage_pct": 100.0,
+      "total_travel_km": 512.19,
+      "gini_equity_index": 0.375759,
+      "assignments": [
+        {
+          "facility_id": "F_TUR_1",
+          "facility_name": "Lodwar County Referral Hospital",
+          "community_id": "CU_TUR_2",
+          "community_name": "Songot Pastoral Village",
+          "assigned_chws": 1,
+          "walking_distance_km": 204.94,
+          "demand_covered": 920
+        },
+        {
+          "facility_id": "F_TUR_1",
+          "facility_name": "Lodwar County Referral Hospital",
+          "community_id": "CU_TUR_3",
+          "community_name": "Oropoi Border Homesteads",
+          "assigned_chws": 1,
+          "walking_distance_km": 297.97,
+          "demand_covered": 640
+        },
+        {
+          "facility_id": "F_TUR_2",
+          "facility_name": "Kakuma Sub-County Hospital",
+          "community_id": "CU_TUR_1",
+          "community_name": "Kalobeyei Settlement Unit",
+          "assigned_chws": 1,
+          "walking_distance_km": 9.28,
+          "demand_covered": 1850
+        }
+      ],
+      "execution_time_sec": 0.482416,
+      "qbraid_job_id": null,
+      "qbraid_synced": false,
+      "objective_value": 987634.407711,
+      "status": "feasible",
+      "who_compliance_pct": 100.0,
+      "d_p90_km": 279.364,
+      "theil_index": 0.344298,
+      "atkinson_index": 0.219814,
+      "bottom_quintile_coverage_pct": 100.0,
+      "peak_memory_mb": null,
+      "extra_metrics": {
+        "backend": "simanneal",
+        "steps": 600,
+        "best_objective": 987634.4077107324,
+        "execution_target": "local_cpu",
+        "time_budget_sec": 3.0,
+        "seed": 42
+      }
+    },
+    "c6_genetic_algorithm": {
+      "scenario_name": "turkana_pastoral_demo",
+      "solver_type": "c6_genetic_algorithm",
+      "bitstring": "100011",
+      "population_coverage_pct": 100.0,
+      "total_travel_km": 343.6,
+      "gini_equity_index": 0.274932,
+      "assignments": [
+        {
+          "facility_id": "F_TUR_1",
+          "facility_name": "Lodwar County Referral Hospital",
+          "community_id": "CU_TUR_1",
+          "community_name": "Kalobeyei Settlement Unit",
+          "assigned_chws": 1,
+          "walking_distance_km": 177.93,
+          "demand_covered": 1850
+        },
+        {
+          "facility_id": "F_TUR_2",
+          "facility_name": "Kakuma Sub-County Hospital",
+          "community_id": "CU_TUR_2",
+          "community_name": "Songot Pastoral Village",
+          "assigned_chws": 1,
+          "walking_distance_km": 36.23,
+          "demand_covered": 920
+        },
+        {
+          "facility_id": "F_TUR_2",
+          "facility_name": "Kakuma Sub-County Hospital",
+          "community_id": "CU_TUR_3",
+          "community_name": "Oropoi Border Homesteads",
+          "assigned_chws": 1,
+          "walking_distance_km": 129.44,
+          "demand_covered": 640
+        }
+      ],
+      "execution_time_sec": 3.030199,
+      "qbraid_job_id": null,
+      "qbraid_synced": false,
+      "objective_value": 921266.562284,
+      "status": "feasible",
+      "who_compliance_pct": 100.0,
+      "d_p90_km": 168.232,
+      "theil_index": 0.152851,
+      "atkinson_index": 0.083565,
+      "bottom_quintile_coverage_pct": 100.0,
+      "peak_memory_mb": null,
+      "extra_metrics": {
+        "backend": "deap",
+        "generations": 149,
+        "best_objective": 921266.562284051,
+        "execution_target": "local_cpu",
+        "time_budget_sec": 3.0,
+        "seed": 42
+      }
+    },
+    "c7_tabu_search": {
+      "scenario_name": "turkana_pastoral_demo",
+      "solver_type": "c7_tabu_search",
+      "bitstring": "011100",
+      "population_coverage_pct": 100.0,
+      "total_travel_km": 512.19,
+      "gini_equity_index": 0.375759,
+      "assignments": [
+        {
+          "facility_id": "F_TUR_1",
+          "facility_name": "Lodwar County Referral Hospital",
+          "community_id": "CU_TUR_2",
+          "community_name": "Songot Pastoral Village",
+          "assigned_chws": 1,
+          "walking_distance_km": 204.94,
+          "demand_covered": 920
+        },
+        {
+          "facility_id": "F_TUR_1",
+          "facility_name": "Lodwar County Referral Hospital",
+          "community_id": "CU_TUR_3",
+          "community_name": "Oropoi Border Homesteads",
+          "assigned_chws": 1,
+          "walking_distance_km": 297.97,
+          "demand_covered": 640
+        },
+        {
+          "facility_id": "F_TUR_2",
+          "facility_name": "Kakuma Sub-County Hospital",
+          "community_id": "CU_TUR_1",
+          "community_name": "Kalobeyei Settlement Unit",
+          "assigned_chws": 1,
+          "walking_distance_km": 9.28,
+          "demand_covered": 1850
+        }
+      ],
+      "execution_time_sec": 0.011412,
+      "qbraid_job_id": null,
+      "qbraid_synced": false,
+      "objective_value": 987634.407711,
+      "status": "feasible",
+      "who_compliance_pct": 100.0,
+      "d_p90_km": 279.364,
+      "theil_index": 0.344298,
+      "atkinson_index": 0.219814,
+      "bottom_quintile_coverage_pct": 100.0,
+      "peak_memory_mb": null,
+      "extra_metrics": {
+        "iterations": 7,
+        "tabu_tenure": 5,
+        "best_objective": 987634.4077107324,
+        "execution_target": "local_cpu",
+        "time_budget_sec": 3.0,
+        "seed": 42
+      }
+    }
+  },
+  "ranking_by_objective": [
+    {
+      "solver_id": "c1_brute_force",
+      "objective_value": 921266.562284,
+      "status": "optimal",
+      "gini_equity_index": 0.274932,
+      "d_p90_km": 168.232,
+      "who_compliance_pct": 100.0,
+      "execution_time_sec": 0.006978
+    },
+    {
+      "solver_id": "c2_milp",
+      "objective_value": 921266.562284,
+      "status": "feasible",
+      "gini_equity_index": 0.274932,
+      "d_p90_km": 168.232,
+      "who_compliance_pct": 100.0,
+      "execution_time_sec": 0.007413
+    },
+    {
+      "solver_id": "c6_genetic_algorithm",
+      "objective_value": 921266.562284,
+      "status": "feasible",
+      "gini_equity_index": 0.274932,
+      "d_p90_km": 168.232,
+      "who_compliance_pct": 100.0,
+      "execution_time_sec": 3.030199
+    },
+    {
+      "solver_id": "c3_greedy",
+      "objective_value": 987634.407711,
+      "status": "feasible",
+      "gini_equity_index": 0.375759,
+      "d_p90_km": 279.364,
+      "who_compliance_pct": 100.0,
+      "execution_time_sec": 0.000432
+    },
+    {
+      "solver_id": "c4_local_search",
+      "objective_value": 987634.407711,
+      "status": "feasible",
+      "gini_equity_index": 0.375759,
+      "d_p90_km": 279.364,
+      "who_compliance_pct": 100.0,
+      "execution_time_sec": 0.0068
+    },
+    {
+      "solver_id": "c7_tabu_search",
+      "objective_value": 987634.407711,
+      "status": "feasible",
+      "gini_equity_index": 0.375759,
+      "d_p90_km": 279.364,
+      "who_compliance_pct": 100.0,
+      "execution_time_sec": 0.011412
+    },
+    {
+      "solver_id": "c5_simulated_annealing",
+      "objective_value": 987634.407711,
+      "status": "feasible",
+      "gini_equity_index": 0.375759,
+      "d_p90_km": 279.364,
+      "who_compliance_pct": 100.0,
+      "execution_time_sec": 0.482416
+    }
+  ],
+  "best_classical": "c1_brute_force"
+}

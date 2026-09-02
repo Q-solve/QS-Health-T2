@@ -1,0 +1,240 @@
+{
+  "jobs": [
+    {
+      "cluster": "lamu_t0_s0_nominal_b4",
+      "tier": "T0",
+      "county": "LAMU",
+      "seed": 0,
+      "constraint_setting": "nominal",
+      "feature_stage": "B4",
+      "n_qubits": 6,
+      "backend": "qbraid:qbraid:sim:qir-sv",
+      "job_id": "qbraid:qbraid:sim:qir-sv-9ca1-qjob-6a989e3ce026787d1e5acf05",
+      "shots": 1000,
+      "status": "COMPLETED",
+      "used_platform_counts": true,
+      "top5_counts": [
+        [
+          "111111",
+          166
+        ],
+        [
+          "111011",
+          54
+        ],
+        [
+          "110111",
+          52
+        ],
+        [
+          "111101",
+          49
+        ],
+        [
+          "101111",
+          48
+        ]
+      ],
+      "submitted_at": "2026-09-03T01:08:18",
+      "objective_value": 41938.361588,
+      "error": null
+    },
+    {
+      "cluster": "garissa_t0_s0_nominal_b4",
+      "tier": "T0",
+      "county": "GARISSA",
+      "seed": 0,
+      "constraint_setting": "nominal",
+      "feature_stage": "B4",
+      "n_qubits": 6,
+      "backend": "qbraid:qbraid:sim:qir-sv",
+      "job_id": "qbraid:qbraid:sim:qir-sv-9ca1-qjob-6a989e56e026787d1e5acf11",
+      "shots": 1000,
+      "status": "COMPLETED",
+      "used_platform_counts": true,
+      "top5_counts": [
+        [
+          "111111",
+          183
+        ],
+        [
+          "011111",
+          53
+        ],
+        [
+          "110111",
+          44
+        ],
+        [
+          "111011",
+          44
+        ],
+        [
+          "111110",
+          41
+        ]
+      ],
+      "submitted_at": "2026-09-03T01:08:34",
+      "objective_value": 4152797.735337,
+      "error": null
+    },
+    {
+      "cluster": "kilifi_t0_s0_nominal_b4",
+      "tier": "T0",
+      "county": "KILIFI",
+      "seed": 0,
+      "constraint_setting": "nominal",
+      "feature_stage": "B4",
+      "n_qubits": 6,
+      "backend": "qbraid:qbraid:sim:qir-sv",
+      "job_id": "qbraid:qbraid:sim:qir-sv-9ca1-qjob-6a989e65e026787d1e5acf16",
+      "shots": 1000,
+      "status": "COMPLETED",
+      "used_platform_counts": true,
+      "top5_counts": [
+        [
+          "111111",
+          201
+        ],
+        [
+          "111011",
+          53
+        ],
+        [
+          "110111",
+          50
+        ],
+        [
+          "111101",
+          49
+        ],
+        [
+          "011111",
+          45
+        ]
+      ],
+      "submitted_at": "2026-09-03T01:08:49",
+      "objective_value": 2316479.882636,
+      "error": null
+    },
+    {
+      "cluster": "lamu_t1_s0_nominal_b4",
+      "tier": "T1",
+      "county": "LAMU",
+      "seed": 0,
+      "constraint_setting": "nominal",
+      "feature_stage": "B4",
+      "n_qubits": 12,
+      "backend": "qbraid:qbraid:sim:qir-sv",
+      "job_id": "qbraid:qbraid:sim:qir-sv-9ca1-qjob-6a989e74e026787d1e5acf1b",
+      "shots": 1000,
+      "status": "COMPLETED",
+      "used_platform_counts": true,
+      "top5_counts": [
+        [
+          "111111111111",
+          38
+        ],
+        [
+          "101111111111",
+          11
+        ],
+        [
+          "111011111111",
+          10
+        ],
+        [
+          "111111110111",
+          10
+        ],
+        [
+          "111101001111",
+          9
+        ]
+      ],
+      "submitted_at": "2026-09-03T01:09:05",
+      "objective_value": 26575.714648,
+      "error": null
+    },
+    {
+      "cluster": "lamu_t2_s0_nominal_b4",
+      "tier": "T2",
+      "county": "LAMU",
+      "seed": 0,
+      "constraint_setting": "nominal",
+      "feature_stage": "B4",
+      "n_qubits": 20,
+      "backend": "qbraid:qbraid:sim:qir-sv",
+      "job_id": "qbraid:qbraid:sim:qir-sv-9ca1-qjob-6a989e85e026787d1e5acf22",
+      "shots": 1000,
+      "status": "AER_LOCAL_ON_LAB",
+      "used_platform_counts": false,
+      "top5_counts": [
+        [
+          "11111111101111111111",
+          4
+        ],
+        [
+          "11111111111011111111",
+          4
+        ],
+        [
+          "11111111010111111111",
+          3
+        ],
+        [
+          "11110111111111111111",
+          3
+        ],
+        [
+          "11111111111101011111",
+          2
+        ]
+      ],
+      "submitted_at": "2026-09-03T01:12:14",
+      "objective_value": 22842724.528661,
+      "error": "Timed out after 180.0s"
+    },
+    {
+      "cluster": "garissa_t1_s0_nominal_b4",
+      "tier": "T1",
+      "county": "GARISSA",
+      "seed": 0,
+      "constraint_setting": "nominal",
+      "feature_stage": "B4",
+      "n_qubits": 12,
+      "backend": "qbraid:qbraid:sim:qir-sv",
+      "job_id": "qbraid:qbraid:sim:qir-sv-9ca1-qjob-6a989f40e026787d1e5acf4c",
+      "shots": 1000,
+      "status": "COMPLETED",
+      "used_platform_counts": true,
+      "top5_counts": [
+        [
+          "111111111111",
+          23
+        ],
+        [
+          "111100001111",
+          12
+        ],
+        [
+          "111111110000",
+          11
+        ],
+        [
+          "111111111101",
+          10
+        ],
+        [
+          "111011111111",
+          9
+        ]
+      ],
+      "submitted_at": "2026-09-03T01:12:28",
+      "objective_value": 660151411.872544,
+      "error": null
+    }
+  ],
+  "backend": "qbraid:qbraid:sim:qir-sv",
+  "shots": 1000
+}
