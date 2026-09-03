@@ -106,8 +106,10 @@ class CHWSolutionAssignment(BaseModel):
     community_id: str
     community_name: str
     assigned_chws: int
-    walking_distance_km: float
-    demand_covered: int
+    walking_distance_km: float  # d_ij (terrain-adjusted)
+    demand_covered: int  # y_j (demand intensity)
+    demand_score: Optional[float] = None  # composite urgency in (0,1]
+    population: Optional[int] = None  # P_j
 
 
 class CHWSolutionResult(BaseModel):
@@ -115,13 +117,18 @@ class CHWSolutionResult(BaseModel):
     solver_type: str  # qaoa_qbraid, vqe_qbraid, greedy_classical, exact_ilp, c1..c7
     bitstring: str
     population_coverage_pct: float
-    total_travel_km: float
+    total_travel_km: float  # raw Σ d_ij x_ij (km); see demand_weighted_travel for H term
     gini_equity_index: float
     assignments: List[CHWSolutionAssignment]
     execution_time_sec: float
     qbraid_job_id: Optional[str] = None
     qbraid_synced: bool = True
-    objective_value: Optional[float] = None
+    objective_value: Optional[float] = None  # H(x*) minimized
+    # Objective-aligned reporting (same variables as evaluate_H / objective.md)
+    demand_weighted_travel: Optional[float] = None  # Σ d_ij y_j x_ij
+    objective_terms: Dict[str, float] = Field(default_factory=dict)
+    objective_raw: Dict[str, Any] = Field(default_factory=dict)
+    objective_inputs: Dict[str, Any] = Field(default_factory=dict)
     status: str = "feasible"  # optimal | feasible | timeout | infeasible | error | bottleneck
     who_compliance_pct: Optional[float] = None
     d_p90_km: Optional[float] = None

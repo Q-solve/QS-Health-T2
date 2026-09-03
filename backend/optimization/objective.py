@@ -68,7 +68,7 @@ def _weights(scenario: CHWDeploymentScenario) -> ObjectiveWeights:
     return scenario.lambdas if getattr(scenario, "lambdas", None) else ObjectiveWeights()
 
 
-def evaluate_H(
+def decompose_H(
     x: np.ndarray,
     dist: np.ndarray,
     scenario: CHWDeploymentScenario,
@@ -79,8 +79,14 @@ def evaluate_H(
     lambda_equity: Optional[float] = None,
     lambda_walk_cap: Optional[float] = None,
     who_ratio: Optional[float] = None,
-) -> float:
-    """Shared objective H(x) (minimize). x: (F, C) binary assignment."""
+) -> Dict[str, Any]:
+    """
+    Term-by-term breakdown of H(x). Weighted terms sum to objective_value.
+
+    Core variables reported here are exactly those in the shared objective:
+      d_ij (terrain-adjusted walk), y_j (demand intensity), x_ij (assignment),
+      P_j, K_i, G*, D_max, λ1…λ6.
+    """
     w = _weights(scenario)
     lambda_travel = w.travel if lambda_travel is None else lambda_travel
     lambda_assign = w.assign if lambda_assign is None else lambda_assign
@@ -94,7 +100,9 @@ def evaluate_H(
     pop = population_vector(scenario)
     y = demand_vector(scenario)
 
-    travel = float(np.sum(dist * y * x))
+    # Unweighted raw km (reporting only) vs demand-weighted travel in H
+    raw_travel_km = float(np.sum(dist * x))
+    demand_weighted_travel = float(np.sum(dist * y * x))
 
     assign_pen = 0.0
     for j in range(num_c):
@@ -103,9 +111,13 @@ def evaluate_H(
 
     cap_pen = 0.0
     stipend_cost = 0.0
+    facility_loads = []
+    facility_caps = []
     for i, f in enumerate(scenario.facilities):
         load = float(np.sum(pop * x[i, :]))
         capacity = float(f.available_chws) * float(who_ratio)
+        facility_loads.append(load)
+        facility_caps.append(capacity)
         overflow = max(0.0, load - capacity)
         cap_pen += overflow ** 2
         stipend_cost += (load / max(who_ratio, 1.0)) * float(f.chw_monthly_stipend_kes) / 5000.0
@@ -123,13 +135,87 @@ def evaluate_H(
 
     walk_pen = float(np.sum((dist > scenario.max_walking_dist_km) * x))
 
-    return (
-        lambda_travel * travel
-        + lambda_assign * assign_pen
-        + lambda_capacity * cap_pen
-        + lambda_equity * equity_excess * max(travel, 1.0)
-        + lambda_walk_cap * walk_pen
-        + float(w.stipend) * stipend_cost
+    term_travel = lambda_travel * demand_weighted_travel
+    term_assign = lambda_assign * assign_pen
+    term_capacity = lambda_capacity * cap_pen
+    term_equity = lambda_equity * equity_excess * max(demand_weighted_travel, 1.0)
+    term_walk_cap = lambda_walk_cap * walk_pen
+    term_stipend = float(w.stipend) * stipend_cost
+    objective_value = (
+        term_travel + term_assign + term_capacity + term_equity + term_walk_cap + term_stipend
+    )
+
+    lambdas = {
+        "travel": float(lambda_travel),
+        "assign": float(lambda_assign),
+        "capacity": float(lambda_capacity),
+        "equity": float(lambda_equity),
+        "walk_cap": float(lambda_walk_cap),
+        "stipend": float(w.stipend),
+    }
+    return {
+        "objective_value": float(objective_value),
+        "terms": {
+            "travel": round(term_travel, 6),
+            "assign": round(term_assign, 6),
+            "capacity": round(term_capacity, 6),
+            "equity": round(term_equity, 6),
+            "walk_cap": round(term_walk_cap, 6),
+            "stipend": round(term_stipend, 6),
+        },
+        "raw": {
+            "demand_weighted_travel": round(demand_weighted_travel, 6),
+            "raw_travel_km": round(raw_travel_km, 6),
+            "assign_violation": round(assign_pen, 6),
+            "capacity_overflow_sq": round(cap_pen, 6),
+            "gini": round(g, 6),
+            "equity_excess": round(equity_excess, 6),
+            "walk_cap_violations": int(walk_pen),
+            "stipend_proxy": round(stipend_cost, 6),
+        },
+        "inputs": {
+            "lambdas": lambdas,
+            "max_walking_dist_km": float(scenario.max_walking_dist_km),
+            "who_ratio": float(who_ratio),
+            "equity_target": g_star,
+            "enabled_factors": list((scenario.extra or {}).get("enabled_factors") or []),
+            "feature_stage": scenario.feature_stage,
+            "num_facilities": num_f,
+            "num_communities": num_c,
+            "y_j": [round(float(v), 4) for v in y.tolist()],
+            "demand_scores": [round(float(c.demand_score), 4) for c in scenario.communities],
+            "populations": [int(c.population) for c in scenario.communities],
+            "facility_loads_pop": [round(v, 2) for v in facility_loads],
+            "facility_capacities_pop": [round(v, 2) for v in facility_caps],
+        },
+    }
+
+
+def evaluate_H(
+    x: np.ndarray,
+    dist: np.ndarray,
+    scenario: CHWDeploymentScenario,
+    *,
+    lambda_travel: Optional[float] = None,
+    lambda_assign: Optional[float] = None,
+    lambda_capacity: Optional[float] = None,
+    lambda_equity: Optional[float] = None,
+    lambda_walk_cap: Optional[float] = None,
+    who_ratio: Optional[float] = None,
+) -> float:
+    """Shared objective H(x) (minimize). x: (F, C) binary assignment."""
+    return float(
+        decompose_H(
+            x,
+            dist,
+            scenario,
+            lambda_travel=lambda_travel,
+            lambda_assign=lambda_assign,
+            lambda_capacity=lambda_capacity,
+            lambda_equity=lambda_equity,
+            lambda_walk_cap=lambda_walk_cap,
+            who_ratio=who_ratio,
+        )["objective_value"]
     )
 
 
@@ -142,6 +228,7 @@ def decode_assignments(
     for i, f in enumerate(scenario.facilities):
         for j, c in enumerate(scenario.communities):
             if x[i, j] > 0.5:
+                y_j = demand_intensity(c)
                 assignments.append(
                     CHWSolutionAssignment(
                         facility_id=f.id,
@@ -150,7 +237,9 @@ def decode_assignments(
                         community_name=c.name,
                         assigned_chws=1,
                         walking_distance_km=round(float(dist[i, j]), 2),
-                        demand_covered=int(round(demand_intensity(c))),
+                        demand_covered=int(round(y_j)),
+                        demand_score=round(float(c.demand_score), 4),
+                        population=int(c.population),
                     )
                 )
     return assignments
@@ -190,13 +279,16 @@ def build_solution_result(
         who_ratio=float(scenario.who_ratio),
         max_walking_km=scenario.max_walking_dist_km,
     )
-    objective = evaluate_H(x, dist, scenario)
+    decomp = decompose_H(x, dist, scenario)
     label = failure_label_for(status, metrics, scenario)
     extra = dict(extra_metrics or {})
     extra["demand_stage"] = scenario.feature_stage
     extra["who_ratio"] = scenario.who_ratio
     extra["equity_target"] = scenario.equity_target
     extra["num_variables"] = scenario.num_variables
+    # Slim copies also live on top-level fields; keep mirrors for older consumers
+    extra["objective_terms"] = decomp["terms"]
+    extra["demand_weighted_travel"] = decomp["raw"]["demand_weighted_travel"]
     return CHWSolutionResult(
         scenario_name=scenario.name,
         solver_type=solver_type,
@@ -208,7 +300,15 @@ def build_solution_result(
         execution_time_sec=round(execution_time_sec, 6),
         qbraid_job_id=None,
         qbraid_synced=False,
-        objective_value=round(objective, 6),
+        objective_value=round(float(decomp["objective_value"]), 6),
+        demand_weighted_travel=decomp["raw"]["demand_weighted_travel"],
+        objective_terms=decomp["terms"],
+        objective_raw=decomp["raw"],
+        objective_inputs={
+            k: v
+            for k, v in decomp["inputs"].items()
+            if k not in {"y_j", "demand_scores", "populations"}
+        },
         status=status,
         who_compliance_pct=metrics["who_compliance_pct"],
         d_p90_km=metrics["d_p90_km"],

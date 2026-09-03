@@ -13,7 +13,7 @@ from backend import config
 
 # Public key documented at https://kenyaareadata.vercel.app/
 KENYA_AREAS_BASE = "https://kenyaareadata.vercel.app/api/areas"
-KENYA_AREAS_API_KEY = "keyPub1569gsvndc123kg9sjhg"
+KENYA_AREAS_API_KEY = getattr(config, "KENYA_AREAS_API_KEY", "") or ""
 
 # Approximate geographic centroids (lat, lon) for Kenya's 47 counties.
 # Used because the Areas API returns hierarchy names only, not coordinates.

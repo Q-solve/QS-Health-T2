@@ -14,7 +14,7 @@ import numpy as np
 import pandas as pd
 
 from backend.geo.chw_facilities import haversine_distance_km
-from backend.scenario.constraints import get_constraint_preset
+from backend.scenario.constraints import resolve_constraints
 from backend.scenario.data_store import (
     TARGET_COUNTIES,
     build_community_units,
@@ -26,7 +26,7 @@ from backend.scenario.data_store import (
     load_facility_frame,
     norm_county,
 )
-from backend.scenario.features import apply_demand_to_communities
+from backend.scenario.features import apply_demand_to_communities, default_enabled_factors
 from backend.scenario.models import CHWDeploymentScenario, CommunityUnit, HealthFacility
 
 TIER_SPEC: Dict[str, Dict] = {
@@ -144,6 +144,50 @@ def _first_fit_decreasing_feasible(pops: List[int], caps: List[float]) -> bool:
     return True
 
 
+def apply_total_chw_headcount(
+    facilities: List[HealthFacility],
+    total_chws: int,
+    *,
+    who_ratio: float = 1000.0,
+    communities: Optional[Sequence[CommunityUnit]] = None,
+) -> Dict[str, Any]:
+    """
+    Distribute a user-specified total CHW headcount across facilities.
+
+    Spreads seats as evenly as possible. If the total is smaller than the
+    facility count, some hubs get 0 — the typed number is never inflated.
+    """
+    n_f = max(len(facilities), 1)
+    who = max(float(who_ratio), 1.0)
+    raw_chws = [int(f.available_chws) for f in facilities]
+    requested = max(int(total_chws), 1)
+    min_each = 1
+    if communities:
+        max_cu = float(max((int(c.population) for c in communities), default=0.0))
+        min_each = max(1, int(math.ceil(max_cu / who)))
+    # Honour the typed headcount. Do not inflate to min_each × F — that
+    # turned "20 CHWs" into thousands of seats on whole-county instances.
+    base, rem = divmod(requested, n_f)
+    for i, f in enumerate(facilities):
+        f.available_chws = base + (1 if i < rem else 0)
+    return {
+        "who_capacity_mode": "user",
+        "raw_total_chws": float(sum(raw_chws)),
+        "scaled_total_chws": float(sum(f.available_chws for f in facilities)),
+        "user_total_chws": float(requested),
+        "requested_total_chws": float(requested),
+        "min_chws_for_largest_cu": float(min_each),
+        "headcount_raised": False,
+        "who_ratio": who,
+        "packing_ok": _first_fit_decreasing_feasible(
+            [int(c.population) for c in (communities or [])],
+            [f.available_chws * who for f in facilities],
+        )
+        if communities
+        else None,
+    }
+
+
 def scale_facilities_to_who(
     facilities: List[HealthFacility],
     communities: List[CommunityUnit],
@@ -208,14 +252,25 @@ def build_ladder_instance(
     counties: Optional[Sequence[str]] = None,
     max_variables: Optional[int] = None,
     who_capacity_mode: str = "raw",
+    enabled_factors: Optional[Sequence[str]] = None,
+    max_walking_dist_km: Optional[float] = None,
+    who_ratio: Optional[float] = None,
+    equity_target: Optional[float] = None,
+    num_chws_total: Optional[int] = None,
 ) -> CHWDeploymentScenario:
     tier = tier.upper()
     if tier not in TIER_SPEC:
         raise KeyError(f"Unknown tier {tier}")
     spec = TIER_SPEC[tier]
     rng = np.random.default_rng(seed)
-    preset = get_constraint_preset(constraint_setting)
+    resolved = resolve_constraints(
+        constraint_setting,
+        max_walking_dist_km=max_walking_dist_km,
+        who_ratio=who_ratio,
+        equity_target=equity_target,
+    )
     stage = feature_stage.upper()
+    factors = list(enabled_factors) if enabled_factors is not None else None
 
     if spec["scope"] == "multi_county":
         group = list(counties) if counties else None
@@ -255,39 +310,56 @@ def build_ladder_instance(
 
     facilities: List[HealthFacility] = build_health_facilities(fac_df)
     communities: List[CommunityUnit] = build_community_units(chu_df)
-    communities = apply_demand_to_communities(communities, facilities, stage=stage)
+    communities = apply_demand_to_communities(
+        communities, facilities, stage=stage, enabled_factors=factors
+    )
 
     cap_meta: Dict = {"who_capacity_mode": "raw"}
-    if str(who_capacity_mode).lower() in {"feasible", "who_feasible", "scaled"}:
-        cap_meta = scale_facilities_to_who(facilities, communities, float(preset["who_ratio"]))
+    if num_chws_total is not None:
+        if int(num_chws_total) <= 0:
+            raise ValueError("num_chws_total must be a positive integer")
+        cap_meta = apply_total_chw_headcount(
+            facilities,
+            int(num_chws_total),
+            who_ratio=float(resolved["who_ratio"]),
+            communities=communities,
+        )
+    elif str(who_capacity_mode).lower() in {"feasible", "who_feasible", "scaled"}:
+        cap_meta = scale_facilities_to_who(
+            facilities, communities, float(resolved["who_ratio"])
+        )
 
+    factor_list = factors if factors is not None else default_enabled_factors(stage)
     n_vars = len(facilities) * len(communities)
-    name = f"{county_label.lower().replace(' ', '_')}_{tier.lower()}_s{seed}_{constraint_setting}_{stage.lower()}"
+    cons_label = resolved["constraint_setting"]
+    name = f"{county_label.lower().replace(' ', '_')}_{tier.lower()}_s{seed}_{cons_label}_{stage.lower()}"
     return CHWDeploymentScenario(
         name=name,
-        title=f"{county_label} {tier} CHW assignment ({constraint_setting}, {stage})",
+        title=f"{county_label} {tier} CHW assignment ({cons_label}, {stage})",
         county=county_label,
         description=(
             f"Ladder {tier} from real KMHFR/OSM coordinates. "
             f"Scope={sub_label}. F={len(facilities)} C={len(communities)} N={n_vars}."
         ),
         num_chws_available=int(sum(f.available_chws for f in facilities)),
-        max_walking_dist_km=float(preset["max_walking_dist_km"]),
+        max_walking_dist_km=float(resolved["max_walking_dist_km"]),
         facilities=facilities,
         communities=communities,
         qubit_count=n_vars,
-        who_ratio=float(preset["who_ratio"]),
-        equity_target=float(preset["equity_target"]),
-        constraint_setting=constraint_setting,
+        who_ratio=float(resolved["who_ratio"]),
+        equity_target=float(resolved["equity_target"]),
+        constraint_setting=cons_label,
         feature_stage=stage,
         tier=tier,
         seed=seed,
-        lambdas=preset["lambdas"],
+        lambdas=resolved["lambdas"],
         extra={
             "sub_scope": sub_label,
             "num_facilities": len(facilities),
             "num_communities": len(communities),
             "num_variables": n_vars,
+            "enabled_factors": list(factor_list),
+            "constraint_overrides": resolved["overrides_applied"],
             **cap_meta,
         },
     )

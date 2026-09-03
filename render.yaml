@@ -1,0 +1,33 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Connect this repo in Render → New → Blueprint
+services:
+  - type: web
+    name: afyadeploy-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHONPATH
+        value: .
+      - key: MAX_QUBITS
+        value: "24"
+      - key: RECOMMENDED_QAOA_QUBITS
+        value: "16"
+      - key: QAOA_USE_LOCAL_AER
+        value: "1"
+      - key: ALLOW_QPU_DEFAULT
+        value: "0"
+      - key: QAOA_SHOTS
+        value: "1000"
+      # Set in Render dashboard after creating the Vercel project:
+      # e.g. https://afyadeploy.vercel.app
+      - key: CORS_ORIGINS
+        sync: false
+      - key: QBRAID_API_KEY
+        sync: false
+      - key: CLAUDE_API_KEY
+        sync: false
+      - key: KENYA_AREAS_API_KEY
+        sync: false

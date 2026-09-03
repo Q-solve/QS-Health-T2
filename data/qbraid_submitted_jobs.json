@@ -233,6 +233,81 @@
       "submitted_at": "2026-09-03T01:12:28",
       "objective_value": 660151411.872544,
       "error": null
+    },
+    {
+      "cluster": "garissa_t2_s0_nominal_b4",
+      "tier": "T2",
+      "county": "GARISSA",
+      "seed": 0,
+      "constraint_setting": "nominal",
+      "feature_stage": "B4",
+      "n_qubits": 20,
+      "backend": "qbraid:qbraid:sim:qir-sv",
+      "job_id": "qbraid:qbraid:sim:qir-sv-9ca1-qjob-6a989f50e026787d1e5acf51",
+      "shots": 1000,
+      "status": "AER_LOCAL_ON_LAB",
+      "used_platform_counts": false,
+      "top5_counts": [
+        [
+          "11111111111111111111",
+          3
+        ],
+        [
+          "11011111110010011111",
+          2
+        ],
+        [
+          "11111111101111111111",
+          2
+        ],
+        [
+          "10100111110010010111",
+          2
+        ],
+        [
+          "01111111111110100000",
+          2
+        ]
+      ],
+      "submitted_at": "2026-09-03T01:15:39",
+      "objective_value": 3460267588.349496,
+      "error": "Timed out after 180.0s"
+    },
+    {
+      "cluster": "lamu_t3_s0_nominal_b4",
+      "tier": "T3",
+      "county": "LAMU",
+      "seed": 0,
+      "constraint_setting": "nominal",
+      "feature_stage": "B4",
+      "n_qubits": 36,
+      "backend": "qbraid:qbraid:sim:qir-sv",
+      "job_id": null,
+      "shots": 1000,
+      "status": "SKIPPED",
+      "used_platform_counts": false,
+      "top5_counts": null,
+      "submitted_at": "2026-09-03T01:15:50",
+      "objective_value": 145767720916.43338,
+      "error": null
+    },
+    {
+      "cluster": "lamu_t4_s0_nominal_b4",
+      "tier": "T4",
+      "county": "LAMU",
+      "seed": 0,
+      "constraint_setting": "nominal",
+      "feature_stage": "B4",
+      "n_qubits": 54,
+      "backend": "qbraid:qbraid:sim:qir-sv",
+      "job_id": null,
+      "shots": 1000,
+      "status": "SKIPPED",
+      "used_platform_counts": false,
+      "top5_counts": null,
+      "submitted_at": "2026-09-03T01:15:52",
+      "objective_value": 288731763153.3626,
+      "error": null
     }
   ],
   "backend": "qbraid:qbraid:sim:qir-sv",

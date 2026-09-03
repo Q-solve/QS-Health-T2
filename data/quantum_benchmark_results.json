@@ -1,9 +1,54 @@
 {
   "phase": 3,
-  "status": "in_progress",
+  "profile": "hackathon",
+  "status": "complete",
   "backend": "qbraid:qbraid:sim:qir-sv",
   "shots": 1000,
-  "n_qaoa_runs": 6,
+  "execution_target": "qbraid_platform",
+  "qbraid_free_simulator": "qbraid:qbraid:sim:qir-sv",
+  "qbraid_lab_profile_slug": "vscode_8vCPU_25GB",
+  "qbraid_lab_vcpus": 8,
+  "qbraid_lab_ram_gb": 25,
+  "qaoa_use_local_aer": true,
+  "elapsed_sec": 494.06,
+  "n_qaoa_runs": 9,
+  "qml_vs_classical": {
+    "qml_vqc": {
+      "mse": 0.006277,
+      "rmse": 0.079228,
+      "mae": 0.069953,
+      "r2": 0.406624,
+      "fit_time_ms": 5184.02,
+      "model": "3-qubit ZZFeatureMap VQC"
+    },
+    "random_forest": {
+      "mse": 0.000452,
+      "rmse": 0.021257,
+      "mae": 0.016319,
+      "r2": 0.957286
+    },
+    "ridge": {
+      "mse": 0.000451,
+      "rmse": 0.021241,
+      "mae": 0.016909,
+      "r2": 0.95735
+    },
+    "xgboost": {
+      "mse": 0.000565,
+      "rmse": 0.023771,
+      "mae": 0.016636,
+      "r2": 0.946585
+    },
+    "verdict_note": "QML RMSE relative improvement vs best classical = -273.0% (need >5% for meaningful QML edge; negative means classical better).",
+    "qml_beats_classical_by_5pct_rmse": false
+  },
+  "preliminary_advantage_signals": {
+    "comparable_instances": 7,
+    "qaoa_strictly_better_than_best_classical": 0,
+    "platform_jobs_with_counts": 5,
+    "skipped_scale": 2,
+    "hint": "Verdict A likely if QAOA never beats best classical on quality@time. Apply full \u00a76 rubric in Phase 4 after reviewing gaps."
+  },
   "records": [
     {
       "tier": "T0",
@@ -850,6 +895,477 @@
       },
       "gap_to_best_classical": 160.54961627873584,
       "beats_best_classical": false
+    },
+    {
+      "tier": "T2",
+      "county": "GARISSA",
+      "seed": 0,
+      "constraint_setting": "nominal",
+      "feature_stage": "B4",
+      "who_capacity_mode": "feasible",
+      "num_facilities": 4,
+      "num_communities": 5,
+      "num_variables": 20,
+      "solver_id": "qaoa_qbraid",
+      "backend": "qbraid:qbraid:sim:qir-sv",
+      "shots": 1000,
+      "qbraid_job_id": "qbraid:qbraid:sim:qir-sv-9ca1-qjob-6a989f50e026787d1e5acf51",
+      "qbraid_status": "AER_LOCAL_ON_LAB",
+      "used_platform_counts": false,
+      "objective_value": 3460267588.349496,
+      "status": "feasible",
+      "failure_label": null,
+      "gini_equity_index": 0.648102,
+      "who_compliance_pct": 50.0,
+      "population_coverage_pct": 100.0,
+      "total_travel_km": 179.41,
+      "d_p90_km": 93.622,
+      "execution_time_sec": 186.859414,
+      "bitstring": "00100010011001000000",
+      "extra_metrics": {
+        "backend_name": "qbraid:qbraid:sim:qir-sv",
+        "qubo_variables": 20,
+        "shots": 1000,
+        "qaoa_gamma": 0.4,
+        "qaoa_beta": 0.3,
+        "qaoa_reps": 1,
+        "used_platform_counts": false,
+        "used_aer_counts": true,
+        "n_unique_bitstrings": 980,
+        "top5_counts": [
+          [
+            "11111111111111111111",
+            3
+          ],
+          [
+            "11011111110010011111",
+            2
+          ],
+          [
+            "11111111101111111111",
+            2
+          ],
+          [
+            "10100111110010010111",
+            2
+          ],
+          [
+            "01111111111110100000",
+            2
+          ]
+        ],
+        "queue_plus_exec_sec": 186.7728,
+        "bitstring_repaired": "00100010011001000000",
+        "qbraid_lab_profile": "vscode_8vCPU_25GB",
+        "demand_stage": "B4",
+        "who_ratio": 1000.0,
+        "equity_target": 0.25,
+        "num_variables": 20
+      },
+      "best_classical": {
+        "solver_id": "c3_greedy",
+        "objective_value": 7307351.159774,
+        "gini_equity_index": 0.574733,
+        "who_compliance_pct": 100.0,
+        "population_coverage_pct": 100.0,
+        "total_travel_km": 398.62,
+        "execution_time_sec": 0.00196,
+        "status": "feasible",
+        "who_capacity_mode": "feasible",
+        "source": "same_instance",
+        "all_runs": [
+          {
+            "solver_id": "c3_greedy",
+            "objective_value": 7307351.159774,
+            "gini_equity_index": 0.574733,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 398.62,
+            "execution_time_sec": 0.00196,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c4_local_search",
+            "objective_value": 7307351.159774,
+            "gini_equity_index": 0.574733,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 398.62,
+            "execution_time_sec": 0.022468,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c5_simulated_annealing",
+            "objective_value": 7307351.159774,
+            "gini_equity_index": 0.574733,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 398.62,
+            "execution_time_sec": 1.93672,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c2_milp",
+            "objective_value": 7307351.159774,
+            "gini_equity_index": 0.574733,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 398.62,
+            "execution_time_sec": 0.480914,
+            "status": "optimal",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          }
+        ]
+      },
+      "gap_to_best_classical": 472.5324076661063,
+      "beats_best_classical": false
+    },
+    {
+      "tier": "T3",
+      "county": "LAMU",
+      "seed": 0,
+      "constraint_setting": "nominal",
+      "feature_stage": "B4",
+      "who_capacity_mode": "feasible",
+      "num_facilities": 6,
+      "num_communities": 6,
+      "num_variables": 36,
+      "solver_id": "qaoa_qbraid",
+      "backend": "qbraid:qbraid:sim:qir-sv",
+      "shots": 1000,
+      "qbraid_job_id": null,
+      "qbraid_status": "SKIPPED",
+      "used_platform_counts": false,
+      "objective_value": 145767720916.43338,
+      "status": "bottleneck",
+      "failure_label": "F-SCALE",
+      "gini_equity_index": 0.325971,
+      "who_compliance_pct": 83.3333,
+      "population_coverage_pct": 100.0,
+      "total_travel_km": 23.77,
+      "d_p90_km": 7.06,
+      "execution_time_sec": 0.003637,
+      "bitstring": "111111000000000000000000000000000000",
+      "extra_metrics": {
+        "backend_name": "qbraid:qbraid:sim:qir-sv",
+        "qubo_variables": 36,
+        "shots": 1000,
+        "skip_reason": "N=36 exceeds simulator qubit cap 30; needs QPU or decomposition",
+        "qbraid_submission": "skipped",
+        "qbraid_lab_profile": "vscode_8vCPU_25GB",
+        "demand_stage": "B4",
+        "who_ratio": 1000.0,
+        "equity_target": 0.25,
+        "num_variables": 36
+      },
+      "best_classical": {
+        "solver_id": "c4_local_search",
+        "objective_value": 2341789.200447,
+        "gini_equity_index": 0.764807,
+        "who_compliance_pct": 100.0,
+        "population_coverage_pct": 100.0,
+        "total_travel_km": 175.99,
+        "execution_time_sec": 0.085112,
+        "status": "feasible",
+        "who_capacity_mode": "feasible",
+        "source": "same_instance",
+        "all_runs": [
+          {
+            "solver_id": "c3_greedy",
+            "objective_value": 2868242.55676,
+            "gini_equity_index": 0.772836,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 233.51,
+            "execution_time_sec": 0.001585,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c4_local_search",
+            "objective_value": 2341789.200447,
+            "gini_equity_index": 0.764807,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 175.99,
+            "execution_time_sec": 0.085112,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c5_simulated_annealing",
+            "objective_value": 2868242.55676,
+            "gini_equity_index": 0.772836,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 233.51,
+            "execution_time_sec": 1.192478,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c2_milp",
+            "objective_value": 2341789.200447,
+            "gini_equity_index": 0.764807,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 175.99,
+            "execution_time_sec": 10.000933,
+            "status": "timeout",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          }
+        ]
+      },
+      "gap_to_best_classical": 62245.30333448001,
+      "beats_best_classical": false
+    },
+    {
+      "tier": "T4",
+      "county": "LAMU",
+      "seed": 0,
+      "constraint_setting": "nominal",
+      "feature_stage": "B4",
+      "who_capacity_mode": "feasible",
+      "num_facilities": 6,
+      "num_communities": 9,
+      "num_variables": 54,
+      "solver_id": "qaoa_qbraid",
+      "backend": "qbraid:qbraid:sim:qir-sv",
+      "shots": 1000,
+      "qbraid_job_id": null,
+      "qbraid_status": "SKIPPED",
+      "used_platform_counts": false,
+      "objective_value": 288731763153.3626,
+      "status": "bottleneck",
+      "failure_label": "F-SCALE",
+      "gini_equity_index": 0.359389,
+      "who_compliance_pct": 83.3333,
+      "population_coverage_pct": 100.0,
+      "total_travel_km": 28.06,
+      "d_p90_km": 5.032,
+      "execution_time_sec": 0.003909,
+      "bitstring": "111111111000000000000000000000000000000000000000000000",
+      "extra_metrics": {
+        "backend_name": "qbraid:qbraid:sim:qir-sv",
+        "qubo_variables": 54,
+        "shots": 1000,
+        "skip_reason": "N=54 exceeds simulator qubit cap 30; needs QPU or decomposition",
+        "qbraid_submission": "skipped",
+        "qbraid_lab_profile": "vscode_8vCPU_25GB",
+        "demand_stage": "B4",
+        "who_ratio": 1000.0,
+        "equity_target": 0.25,
+        "num_variables": 54
+      },
+      "best_classical": {
+        "solver_id": "c2_milp",
+        "objective_value": 450.0,
+        "gini_equity_index": 0.060825,
+        "who_compliance_pct": 100.0,
+        "population_coverage_pct": 0.0,
+        "total_travel_km": 0.0,
+        "execution_time_sec": 3.7e-05,
+        "status": "bottleneck",
+        "who_capacity_mode": "feasible",
+        "source": "same_instance",
+        "all_runs": [
+          {
+            "solver_id": "c3_greedy",
+            "objective_value": 2748170.484954,
+            "gini_equity_index": 0.800941,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 196.38,
+            "execution_time_sec": 0.001279,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c4_local_search",
+            "objective_value": 2540803.610793,
+            "gini_equity_index": 0.806474,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 180.28,
+            "execution_time_sec": 0.088127,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c5_simulated_annealing",
+            "objective_value": 564103.362569,
+            "gini_equity_index": 0.359389,
+            "who_compliance_pct": 83.3333,
+            "population_coverage_pct": 100.0,
+            "total_travel_km": 28.06,
+            "execution_time_sec": 1.309008,
+            "status": "feasible",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          },
+          {
+            "solver_id": "c2_milp",
+            "objective_value": 450.0,
+            "gini_equity_index": 0.060825,
+            "who_compliance_pct": 100.0,
+            "population_coverage_pct": 0.0,
+            "total_travel_km": 0.0,
+            "execution_time_sec": 3.7e-05,
+            "status": "bottleneck",
+            "who_capacity_mode": "feasible",
+            "source": "same_instance"
+          }
+        ]
+      },
+      "gap_to_best_classical": 641626139.3408058,
+      "beats_best_classical": false
     }
-  ]
+  ],
+  "honest_framing": "QAOA is a secondary NISQ comparator on shared H(x). Beating greedy alone is not quantum advantage; primary rivals are best of C2\u2013C7.",
+  "q_solve_judging": {
+    "judging_context": {
+      "source": "Q-SOLVE Kenya 2026 Judging Tool V02",
+      "docs": "docs/judging/Q_SOLVE_JUDGING_CONTEXT.md",
+      "pdf": "docs/judging/Q-SOLVE_Kenya_2026_Judging_Tool_V02.pdf",
+      "criteria": {
+        "JC1": {
+          "name": "Problem Understanding and Local Relevance",
+          "max_score": 15,
+          "focus": "Kenyan CHW deployment across marginalised counties; users, constraints, consequences"
+        },
+        "JC2": {
+          "name": "Quantum Computing Relevance and Necessity",
+          "max_score": 20,
+          "focus": "Bottleneck identification, classical baselines, no exaggerated advantage claims"
+        },
+        "JC3": {
+          "name": "Technical Correctness and Scientific Integrity",
+          "max_score": 15,
+          "focus": "Shared H(x), explicit assumptions/limits, reproducible formulation"
+        },
+        "JC4": {
+          "name": "Evidence, Benchmarking and Validation",
+          "max_score": 15,
+          "focus": "Quantitative multi-county baselines, metrics, robustness/scalability"
+        },
+        "JC5": {
+          "name": "Innovation and Intellectual Contribution",
+          "max_score": 12,
+          "focus": "Equity metrics suite, classical ladder, honest hybrid quantum path"
+        },
+        "JC6": {
+          "name": "Sustainable Development Impact (SDGs 2, 3 and 8)",
+          "max_score": 13,
+          "focus": "Primary SDG 3 (Good Health); CHW coverage/equity/workload outcomes"
+        },
+        "JC7": {
+          "name": "Feasibility, Scalability and Adoption",
+          "max_score": 10,
+          "focus": "Runs on qBraid Small VS Code + free simulator; staged classical\u2192quantum path"
+        }
+      },
+      "final_score_formula": "(Raw Score \u00d7 Evidence Confidence Multiplier) \u2212 Quantum-Washing Penalty",
+      "evidence_multipliers": {
+        "HIGH": 1.0,
+        "MODERATE": 0.95,
+        "LOW": 0.85
+      },
+      "quantum_washing_penalties": {
+        "none": 0,
+        "weak_justification": -3,
+        "unsupported_advantage": -6,
+        "promotional_misuse": -10
+      },
+      "focus_sdg": {
+        "primary": "SDG 3: Good Health and Well-Being",
+        "secondary": [
+          "SDG 8: Decent Work (CHW workload protection)",
+          "SDG 2: Zero Hunger (nutrition outreach support)"
+        ]
+      },
+      "environment_target": {
+        "qbraid_lab_instance": "Small \u00b7 VS Code",
+        "vcpus": 2,
+        "ram_gb": 4,
+        "classical_target": "local_cpu",
+        "quantum_default": "free_simulator"
+      }
+    },
+    "auto_checklist": {
+      "JC1": {
+        "local_kenya_scope": "GAP",
+        "multi_county_not_single_demo": "GAP",
+        "notes": "3 counties / 9 scenarios executed"
+      },
+      "JC2": {
+        "classical_baselines_present": "PASS",
+        "bottleneck_before_quantum_claim": "PASS",
+        "no_exaggerated_advantage": "PASS",
+        "notes": "Quantum necessity gated on classical bottlenecks"
+      },
+      "JC3": {
+        "shared_objective_H": "PASS",
+        "reproducible_suite": "PASS"
+      },
+      "JC4": {
+        "quantitative_multi_location": "GAP",
+        "multi_method_benchmark": "PASS",
+        "equity_beyond_gini": "PASS"
+      },
+      "JC5": {
+        "classical_suite_plus_honest_quantum_path": "PASS"
+      },
+      "JC6": {
+        "sdg3_health_metrics": "PASS",
+        "focus_sdg": "SDG 3: Good Health and Well-Being"
+      },
+      "JC7": {
+        "runs_on_small_lab_or_free_sim": "PASS",
+        "qbraid_instance": "Small \u00b7 VS Code"
+      }
+    },
+    "evidence_gaps": [
+      "JC1.local_kenya_scope",
+      "JC1.multi_county_not_single_demo",
+      "JC4.quantitative_multi_location"
+    ],
+    "suggested_self_score": {
+      "criterion_scores": {
+        "JC1": 8,
+        "JC2": 14,
+        "JC3": 12,
+        "JC4": 7,
+        "JC5": 8,
+        "JC6": 10,
+        "JC7": 8
+      },
+      "raw_score": 67,
+      "evidence_confidence": "MODERATE",
+      "multiplier": 0.95,
+      "quantum_washing": "none",
+      "penalty": 0,
+      "final_score_estimate": 63.65,
+      "disclaimer": "Self-estimate for team steering only \u2014 official scores are by judges."
+    },
+    "guidance": [
+      "Run all counties (not one location) for JC1/JC4.",
+      "Exhaust classical C1\u2013C7 before any quantum-necessity claim (JC2).",
+      "Never claim quantum advantage vs greedy alone (quantum-washing risk).",
+      "Keep SDG 3 metrics (coverage, equity, WHO, d_P90) visible (JC6).",
+      "Prefer qBraid Small VS Code + free simulator for JC7 realism."
+    ]
+  }
 }

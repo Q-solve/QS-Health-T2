@@ -50,10 +50,117 @@ from backend.scenario.models import CHWDeploymentScenario
 JOBS_JSON = ROOT / "data" / "qbraid_submitted_jobs.json"
 OUTPUT_JSON = ROOT / "data" / "quantum_benchmark_results.json"
 CLASSICAL_JSON = ROOT / "data" / "classical_suite_results.json"
+HURDLES_JSON = ROOT / "data" / "classical_hurdles.json"
 
 
 def _log(msg: str = "") -> None:
     print(msg, flush=True)
+
+
+def _jobs_from_classical_hurdles() -> List[Dict[str, Any]]:
+    """
+    Prefer instances where classical already hit a quantum-candidate bottleneck.
+    Supports both summarize_hurdles() flat JSON and nested feasible_mode payloads.
+    """
+    if not HURDLES_JSON.exists():
+        return []
+    try:
+        payload = json.loads(HURDLES_JSON.read_text())
+    except Exception:
+        return []
+
+    instances: List[Dict[str, Any]] = []
+    # Flat summarize_hurdles output
+    if isinstance(payload.get("instances"), list):
+        instances.extend(payload["instances"])
+    if isinstance(payload.get("quantum_candidates"), list):
+        instances.extend(payload["quantum_candidates"])
+    # Nested complete_tiers / feasible_mode shape
+    for nest_key in ("feasible_mode", "raw_mode_legacy", "classical_hurdle_for_quantum"):
+        nest = payload.get(nest_key)
+        if not isinstance(nest, dict):
+            continue
+        if isinstance(nest.get("quantum_candidates"), list):
+            instances.extend(nest["quantum_candidates"])
+        if isinstance(nest.get("instances"), list):
+            instances.extend(nest["instances"])
+
+    jobs: List[Dict[str, Any]] = []
+    seen = set()
+    for inst in instances:
+        if not (inst.get("quantum_candidate") or inst.get("quantum_needed_candidate")):
+            continue
+        tier = str(inst.get("tier") or "").upper()
+        county = str(inst.get("county") or "").upper()
+        if not tier or not county:
+            continue
+        seed = int(inst.get("seed") or 0)
+        constraint = str(inst.get("constraint_setting") or "nominal").lower()
+        stage = str(inst.get("feature_stage") or "B4").upper()
+        key = (tier, county, seed, constraint, stage)
+        if key in seen:
+            continue
+        seen.add(key)
+        jobs.append(
+            {
+                "tier": tier,
+                "county": county,
+                "seed": seed,
+                "constraint": constraint,
+                "stage": stage,
+                "hurdle": inst.get("hurdle"),
+                "hurdle_note": inst.get("note"),
+                "quantum_needed": bool(inst.get("quantum_needed_candidate")),
+            }
+        )
+    return jobs
+
+
+def phase3_jobs(profile: str = "hackathon") -> List[Dict[str, Any]]:
+    """
+    Prefer classical-hurdle quantum candidates (classical first, then quantum).
+    Fall back to a compact T0–T2 matrix only if hurdles file is missing/empty.
+    """
+    from_hurdles = _jobs_from_classical_hurdles()
+    if from_hurdles:
+        if profile == "smoke":
+            return from_hurdles[:2]
+        # Prefer NISQ-sized candidates; keep a couple of larger probes if present
+        small = [j for j in from_hurdles if j["tier"] in {"T0", "T1", "T2"}]
+        large = [j for j in from_hurdles if j["tier"] in {"T3", "T4"}]
+        jobs = small[:8] + large[:2]
+        if jobs:
+            _log(
+                f"Using {len(jobs)} quantum jobs gated on classical hurdles "
+                f"({len(small)} T0–T2, {len(large)} T3–T4 candidates in file)."
+            )
+            for j in jobs:
+                _log(
+                    f"  · {j['tier']} {j['county']} seed={j['seed']} "
+                    f"hurdle={j.get('hurdle')} needed={j.get('quantum_needed')}"
+                )
+            return jobs
+
+    _log(
+        "classical_hurdles.json missing or has no quantum_candidate rows — "
+        "falling back to fixed smoke/hackathon matrix."
+    )
+    counties = list_counties()
+    core = [c for c in ("LAMU", "GARISSA", "KILIFI", "TURKANA") if c in counties] or counties[:4]
+    if profile == "smoke":
+        return [
+            {"tier": "T0", "county": core[0], "seed": 0, "constraint": "nominal", "stage": "B4"},
+            {"tier": "T1", "county": core[0], "seed": 0, "constraint": "nominal", "stage": "B4"},
+        ]
+    jobs: List[Dict[str, Any]] = []
+    for county in core[:3]:
+        jobs.append({"tier": "T0", "county": county, "seed": 0, "constraint": "nominal", "stage": "B4"})
+    for county in core[:2]:
+        jobs.append({"tier": "T1", "county": county, "seed": 0, "constraint": "nominal", "stage": "B4"})
+        jobs.append({"tier": "T2", "county": county, "seed": 0, "constraint": "nominal", "stage": "B4"})
+    jobs.append({"tier": "T3", "county": core[0], "seed": 0, "constraint": "nominal", "stage": "B4"})
+    jobs.append({"tier": "T4", "county": core[0], "seed": 0, "constraint": "nominal", "stage": "B4"})
+    return jobs
 
 
 def _save_partial(
@@ -76,30 +183,6 @@ def _save_partial(
             indent=2,
         )
     )
-
-
-def phase3_jobs(profile: str = "hackathon") -> List[Dict[str, Any]]:
-    """
-    Compact but fair comparator matrix on T0–T2 (fits free sim ≤30 qubits).
-    T3/T4 entries are included as scale-skip probes for the verdict narrative.
-    """
-    counties = list_counties()
-    core = [c for c in ("LAMU", "GARISSA", "KILIFI", "TURKANA") if c in counties] or counties[:4]
-    if profile == "smoke":
-        return [
-            {"tier": "T0", "county": core[0], "seed": 0, "constraint": "nominal", "stage": "B4"},
-            {"tier": "T1", "county": core[0], "seed": 0, "constraint": "nominal", "stage": "B4"},
-        ]
-    jobs: List[Dict[str, Any]] = []
-    for county in core[:3]:
-        jobs.append({"tier": "T0", "county": county, "seed": 0, "constraint": "nominal", "stage": "B4"})
-    for county in core[:2]:
-        jobs.append({"tier": "T1", "county": county, "seed": 0, "constraint": "nominal", "stage": "B4"})
-        jobs.append({"tier": "T2", "county": county, "seed": 0, "constraint": "nominal", "stage": "B4"})
-    # Scale probes — expected SKIP on free simulator
-    jobs.append({"tier": "T3", "county": core[0], "seed": 0, "constraint": "nominal", "stage": "B4"})
-    jobs.append({"tier": "T4", "county": core[0], "seed": 0, "constraint": "nominal", "stage": "B4"})
-    return jobs
 
 
 def _load_classical_best() -> Dict[Tuple, Dict[str, Any]]:
@@ -336,6 +419,8 @@ def run_phase3(profile: str, backend: str, shots: int) -> Dict[str, Any]:
         constraint = spec["constraint"]
         stage = spec["stage"]
         _log(f"\n[{i}/{len(jobs_spec)}] {tier} · {county} · seed={seed} · {constraint}/{stage}")
+        if spec.get("hurdle"):
+            _log(f"    Classical hurdle: {spec.get('hurdle')} — {spec.get('hurdle_note') or ''}")
 
         scenario = build_ladder_instance(
             tier=tier,

@@ -8,8 +8,7 @@
   "plots": [
     "/home/job/Desktop/projects/qiskit-project/docs/benchmark_classical_scaling.png",
     "/home/job/Desktop/projects/qiskit-project/docs/benchmark_classical_quality.png",
-    "/home/job/Desktop/projects/qiskit-project/docs/benchmark_classical_failure_heatmap.png",
-    "/home/job/Desktop/projects/qiskit-project/docs/benchmark_classical_hurdle_heatmap.png"
+    "/home/job/Desktop/projects/qiskit-project/docs/benchmark_classical_failure_heatmap.png"
   ],
   "hurdle_summary": {
     "n_instances": 161,
