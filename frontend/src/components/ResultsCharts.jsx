@@ -117,11 +117,11 @@ export default function ResultsCharts({ result }) {
           >
             <ResponsiveContainer width="100%" height={260}>
               <BarChart data={methodRows} margin={{ top: 8, right: 8, left: 0, bottom: 48 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#2f574d" />
-                <XAxis dataKey="method" tick={{ fill: "#9bb5ad", fontSize: 11 }} angle={-25} textAnchor="end" interval={0} />
-                <YAxis tick={{ fill: "#9bb5ad", fontSize: 11 }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#c9d2cd" />
+                <XAxis dataKey="method" tick={{ fill: "#5a736c", fontSize: 11 }} angle={-25} textAnchor="end" interval={0} />
+                <YAxis tick={{ fill: "#5a736c", fontSize: 11 }} />
                 <Tooltip
-                  contentStyle={{ background: "#16302b", border: "1px solid #2f574d", color: "#e8f2ef" }}
+                  contentStyle={{ background: "#f2f4f2", border: "1px solid #c9d2cd", color: "#1a2e28" }}
                 />
                 <Bar dataKey="score" name="Score H(x)" fill={CHART_COLORS.score} radius={[3, 3, 0, 0]} />
               </BarChart>
@@ -136,13 +136,13 @@ export default function ResultsCharts({ result }) {
           >
             <ResponsiveContainer width="100%" height={260}>
               <BarChart data={methodRows} margin={{ top: 8, right: 8, left: 0, bottom: 48 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#2f574d" />
-                <XAxis dataKey="method" tick={{ fill: "#9bb5ad", fontSize: 11 }} angle={-25} textAnchor="end" interval={0} />
-                <YAxis tick={{ fill: "#9bb5ad", fontSize: 11 }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#c9d2cd" />
+                <XAxis dataKey="method" tick={{ fill: "#5a736c", fontSize: 11 }} angle={-25} textAnchor="end" interval={0} />
+                <YAxis tick={{ fill: "#5a736c", fontSize: 11 }} />
                 <Tooltip
-                  contentStyle={{ background: "#16302b", border: "1px solid #2f574d", color: "#e8f2ef" }}
+                  contentStyle={{ background: "#f2f4f2", border: "1px solid #c9d2cd", color: "#1a2e28" }}
                 />
-                <Legend wrapperStyle={{ color: "#9bb5ad", fontSize: 12 }} />
+                <Legend wrapperStyle={{ color: "#5a736c", fontSize: 12 }} />
                 <Bar dataKey="coverage" name="Coverage %" fill={CHART_COLORS.coverage} radius={[3, 3, 0, 0]} />
                 <Bar dataKey="travel" name="Travel km" fill={CHART_COLORS.travel} radius={[3, 3, 0, 0]} />
                 <Bar dataKey="fairness" name="Gini" fill={CHART_COLORS.fairness} radius={[3, 3, 0, 0]} />
@@ -158,11 +158,11 @@ export default function ResultsCharts({ result }) {
           >
             <ResponsiveContainer width="100%" height={260}>
               <BarChart data={demandRows} layout="vertical" margin={{ top: 8, right: 16, left: 8, bottom: 8 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#2f574d" />
-                <XAxis type="number" domain={[0, 1]} tick={{ fill: "#9bb5ad", fontSize: 11 }} />
-                <YAxis type="category" dataKey="name" width={100} tick={{ fill: "#9bb5ad", fontSize: 10 }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#c9d2cd" />
+                <XAxis type="number" domain={[0, 1]} tick={{ fill: "#5a736c", fontSize: 11 }} />
+                <YAxis type="category" dataKey="name" width={100} tick={{ fill: "#5a736c", fontSize: 10 }} />
                 <Tooltip
-                  contentStyle={{ background: "#16302b", border: "1px solid #2f574d", color: "#e8f2ef" }}
+                  contentStyle={{ background: "#f2f4f2", border: "1px solid #c9d2cd", color: "#1a2e28" }}
                   formatter={(v, _n, props) => [`${Number(v).toFixed(3)} (pop ${props.payload.population})`, "Demand"]}
                 />
                 <Bar dataKey="demand" name="Demand" fill={CHART_COLORS.demand} radius={[0, 3, 3, 0]} />
@@ -178,11 +178,11 @@ export default function ResultsCharts({ result }) {
           >
             <ResponsiveContainer width="100%" height={260}>
               <BarChart data={walkRows} layout="vertical" margin={{ top: 8, right: 16, left: 8, bottom: 8 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#2f574d" />
-                <XAxis type="number" tick={{ fill: "#9bb5ad", fontSize: 11 }} />
-                <YAxis type="category" dataKey="name" width={100} tick={{ fill: "#9bb5ad", fontSize: 10 }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#c9d2cd" />
+                <XAxis type="number" tick={{ fill: "#5a736c", fontSize: 11 }} />
+                <YAxis type="category" dataKey="name" width={100} tick={{ fill: "#5a736c", fontSize: 10 }} />
                 <Tooltip
-                  contentStyle={{ background: "#16302b", border: "1px solid #2f574d", color: "#e8f2ef" }}
+                  contentStyle={{ background: "#f2f4f2", border: "1px solid #c9d2cd", color: "#1a2e28" }}
                   formatter={(v) => [`${Number(v).toFixed(1)} km`, "Walk"]}
                 />
                 <Bar dataKey="walk" name="Walk km" fill={CHART_COLORS.walk} radius={[0, 3, 3, 0]} />

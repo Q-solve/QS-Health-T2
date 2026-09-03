@@ -1,19 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600;700&display=swap");
 
 :root {
-  --bg0: #0f1c1a;
-  --bg1: #16302b;
-  --panel: #1a3832;
-  --panel-2: #21443c;
-  --ink: #e8f2ef;
-  --muted: #9bb5ad;
-  --line: #2f574d;
-  --accent: #3ecfb0;
-  --accent-solid: #2bb673;
-  --warn: #e9a23b;
-  --danger: #e07070;
-  --best: #1f5c45;
-  --quantum: #3a4f6b;
+  --bg0: #e8ebe8;
+  --bg1: #e4e7e4;
+  --panel: #f2f4f2;
+  --panel-2: #f2f4f2;
+  --surface: #e6eae7;
+  --ink: #1a2e28;
+  --muted: #5a736c;
+  --line: #c9d2cd;
+  --accent: #1a8f74;
+  --accent-solid: #1e9e64;
+  --warn: #c47a12;
+  --danger: #c44545;
+  --best: #d4eadc;
+  --quantum: #d8e2ee;
   --font: "IBM Plex Sans", "Segoe UI", sans-serif;
   --display: "IBM Plex Serif", Georgia, serif;
 }
@@ -27,10 +28,8 @@ body {
   min-height: 100vh;
   font-family: var(--font);
   color: var(--ink);
-  background:
-    radial-gradient(ellipse 80% 50% at 10% -10%, #1f4d3f 0%, transparent 55%),
-    radial-gradient(ellipse 60% 40% at 100% 0%, #243b55 0%, transparent 50%),
-    linear-gradient(165deg, var(--bg0), var(--bg1) 55%, #0c1614);
+  background: var(--bg0);
+  color-scheme: light;
   font-size: 15px;
   line-height: 1.45;
 }
@@ -51,7 +50,7 @@ body {
   font-size: clamp(2.1rem, 5vw, 3rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #7dffc0;
+  color: #0d7a5a;
 }
 
 .hero h1 {
@@ -103,7 +102,7 @@ body {
 .error-banner {
   background: rgba(224, 112, 112, 0.15);
   border: 1px solid var(--danger);
-  color: #ffd0d0;
+  color: #8a1f1f;
   padding: 0.7rem 1rem;
   margin-bottom: 1rem;
 }
@@ -152,7 +151,7 @@ body {
 }
 
 .panel {
-  background: linear-gradient(180deg, var(--panel-2), var(--panel));
+  background: var(--panel);
   border: 1px solid var(--line);
   padding: 1rem 1.05rem 1.1rem;
   width: 100%;
@@ -161,7 +160,7 @@ body {
 
 .card-block {
   border: 1px solid var(--line);
-  background: rgba(0, 0, 0, 0.16);
+  background: var(--surface);
   padding: 0.7rem 0.75rem;
   width: 100%;
 }
@@ -170,7 +169,7 @@ body {
   margin: 0.85rem 0;
   padding: 0.75rem;
   border: 1px solid var(--line);
-  background: rgba(0, 0, 0, 0.12);
+  background: var(--surface);
   width: 100%;
 }
 
@@ -182,7 +181,7 @@ body {
 }
 
 .chip {
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--surface);
   border: 1px solid var(--line);
   color: var(--muted);
   padding: 0.3rem 0.65rem;
@@ -342,7 +341,7 @@ body {
   width: 100%;
   border: 0;
   background: var(--accent-solid);
-  color: #062218;
+  color: #ffffff;
   font-weight: 700;
   padding: 0.7rem 0.9rem;
   cursor: pointer;
@@ -391,7 +390,7 @@ body {
 }
 
 .stat {
-  background: rgba(0, 0, 0, 0.22);
+  background: var(--surface);
   border: 1px solid var(--line);
   padding: 0.55rem 0.6rem;
   display: flex;
@@ -445,11 +444,11 @@ th {
 }
 
 tr.best {
-  background: rgba(31, 92, 69, 0.35);
+  background: var(--best);
 }
 
 tr.quantum-row {
-  background: rgba(58, 79, 107, 0.35);
+  background: var(--quantum);
 }
 
 .chart-box {
@@ -465,7 +464,7 @@ tr.quantum-row {
 }
 
 .file-list .ok {
-  color: #b7e3cf;
+  color: #1a7a58;
 }
 
 .file-list .missing {
@@ -475,7 +474,7 @@ tr.quantum-row {
 .recs {
   margin: 0.5rem 0 0;
   padding-left: 1.1rem;
-  color: #d5ebe3;
+  color: var(--ink);
   font-size: 0.9rem;
 }
 
@@ -486,7 +485,7 @@ tr.quantum-row {
 }
 
 .job-line code {
-  color: #c8ffe6;
+  color: #0d7a5a;
 }
 
 .footer {
@@ -609,7 +608,7 @@ tr.quantum-row {
   margin: 0.75rem 0;
   padding: 0.7rem 0.75rem;
   border: 1px dashed var(--line);
-  background: rgba(0, 0, 0, 0.18);
+  background: var(--surface);
   font-size: 0.9rem;
 }
 
@@ -652,7 +651,7 @@ tr.quantum-row {
 .vs-card {
   border: 1px solid var(--line);
   padding: 0.75rem 0.85rem;
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--surface);
 }
 
 .vs-card.classical {
@@ -672,7 +671,7 @@ tr.quantum-row {
   margin: 0;
   padding-left: 1.05rem;
   font-size: 0.9rem;
-  color: #d5ebe3;
+  color: var(--ink);
 }
 
 .field input[type="number"] {
@@ -748,7 +747,7 @@ tr.quantum-row {
 
 .opportunity-card {
   border: 1px solid var(--line);
-  background: rgba(0, 0, 0, 0.18);
+  background: var(--surface);
   padding: 0.75rem 0.8rem;
 }
 
@@ -776,7 +775,7 @@ tr.quantum-row {
 .opportunity-id {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.78rem;
-  color: #9fd6c4;
+  color: #1a7a58;
 }
 
 .evidence-pill {
@@ -791,23 +790,23 @@ tr.quantum-row {
 
 .evidence-pill.candidate {
   border-color: var(--warn);
-  color: #f0c98a;
+  color: #9a6408;
 }
 
 .evidence-pill.demonstrated_workflow {
   border-color: var(--accent-solid);
-  color: #9fe5c4;
+  color: #1a7a58;
 }
 
 .evidence-pill.not_applicable {
   border-color: var(--danger);
-  color: #f0b0b0;
+  color: #c44545;
 }
 
 .evidence-pill.roadmap,
 .evidence-pill.aspirational {
   border-color: #5a7aa0;
-  color: #b7c9e0;
+  color: #3a5a80;
 }
 
 .opportunity-fail,
@@ -817,7 +816,7 @@ tr.quantum-row {
 .opportunity-caveat {
   margin: 0.35rem 0 0;
   font-size: 0.84rem;
-  color: #d5ebe3;
+  color: var(--ink);
 }
 
 .opportunity-caveat {
@@ -833,5 +832,5 @@ tr.quantum-row {
 
 .panel code {
   font-size: 0.8em;
-  color: #9fd6c4;
+  color: #1a7a58;
 }
